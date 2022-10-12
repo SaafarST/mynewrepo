@@ -7,6 +7,7 @@ public class C {
         b.staticNumber = 200;
         System.out.println(b.staticNumber);
 
+        
         A a = new A();
         a.number = 200;
         a.staticNumber = 300;
