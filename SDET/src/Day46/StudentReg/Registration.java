@@ -9,6 +9,8 @@ public class Registration {
     public Registration(String studentName, Months months) {
         this.StudentName = studentName;
         this.months = months;
+ //       setWhichMonth(this.months);
+        this.WhichMonth = this.months.getWhichmonth();
     }
 
     @Override
@@ -16,6 +18,7 @@ public class Registration {
         return "Registration{" +
                 "StudentName='" + StudentName + '\'' +
                 ", months=" + months +
+                ", WhichMonth=" + WhichMonth +
                 '}';
     }
 
