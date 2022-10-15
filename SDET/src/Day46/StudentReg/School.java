@@ -4,5 +4,7 @@ public class School {
     public static void main(String[] args) {
         Registration registration = new Registration("Arthur",Months.April);
         System.out.println(registration);
+        registration.setWhichMonth(Months.April);
+        System.out.println(registration.WhichMonth);
     }
 }
