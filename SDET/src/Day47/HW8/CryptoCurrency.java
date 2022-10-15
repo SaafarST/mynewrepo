@@ -1,4 +1,4 @@
-package Day7.HW8;
+package Day47.HW8;
 
 public enum CryptoCurrency {
     BITCOIN("BTC",19960.3),
