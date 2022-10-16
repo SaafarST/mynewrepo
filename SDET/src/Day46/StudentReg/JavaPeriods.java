@@ -1,6 +1,7 @@
 package Day46.StudentReg;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.Year;
 
@@ -19,6 +20,11 @@ public class JavaPeriods {
         int month = period.getMonths();
         int days = period.getDays();
         System.out.println(year+" "+month+" "+days);
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime dateTime = LocalDateTime.of(2000,20,32,20,2,1);
+        //Period.between(dateTime,now);
+
 
 
     }
