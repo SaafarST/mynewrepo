@@ -14,5 +14,8 @@ public class JavaLocalDateTime {
         DateTimeFormatter ownformat = DateTimeFormatter.ofPattern("MM:dd:yyy|HH:mm:ss");
         String ownform = today.format(ownformat);
         System.out.println(ownform);
+        DateTimeFormatter ownformat1 = DateTimeFormatter.ofPattern("yyy-MM-dd'T'HH:mm:ss2");
+        String ownform1 = today.format(ownformat1);
+        System.out.println(ownform1);
     }
 }
