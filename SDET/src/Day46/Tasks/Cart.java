@@ -24,6 +24,7 @@ public class Cart {
         cart.add(new BuyProduct(Drink.SPRITE,5));
         cart.add(new BuyProduct(Drink.FANTA,9));
         cart.add(new BuyProduct(Drink.PEPSI,1));
+        cart.add(new BuyProduct(Drink.PEPSI,1));
         for (BuyProduct product : cart) {
             System.out.println(product);
         }
