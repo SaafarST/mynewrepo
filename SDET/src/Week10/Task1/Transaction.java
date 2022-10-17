@@ -103,4 +103,12 @@ public class Transaction {
         System.out.println(this.totalUSDAmount);
         this.stock.forEach((key, value) -> System.out.println(key + " : " + value));
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "totalUSDAmount=" + totalUSDAmount +
+             //   ", transactionAmount=" + transactionAmount +
+                '}';
+    }
 }
