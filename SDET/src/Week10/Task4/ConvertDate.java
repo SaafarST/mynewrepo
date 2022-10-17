@@ -16,6 +16,7 @@ public class ConvertDate {
     public static void main(String[] args) {
         System.out.println(ConvertedDate("15th Oct 2020"));
         System.out.println(ConvertedDate("25th Nov 20120"));
-
+        System.out.println(ConvertedDate("03th Nov 20120"));
+        System.out.println(ConvertedDate("03th Nov 20120"));
     }
 }
