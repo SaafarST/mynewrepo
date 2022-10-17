@@ -28,4 +28,12 @@ public enum Product {
         return buyPrice;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + '\'' +
+                ", buyPrice=" + buyPrice +
+                ", sellPrice=" + sellPrice +
+                '}';
+    }
 }
