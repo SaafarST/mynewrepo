@@ -1,8 +1,8 @@
-package Day50.JavaExceptions;
+package Day50.JavaExceptions.UnexpectedorUncheckedException;
 
 import java.util.Scanner;
 
-public class Example {
+public class Unchecked {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int numb1 = 0;
@@ -14,7 +14,7 @@ public class Example {
             try {
                 numb1 = Integer.parseInt(scan.nextLine());
                 isnotcorrect = false;
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {//or Exception
                 System.out.println("Wrong number formar, enter only numeric values: ");
 
             }

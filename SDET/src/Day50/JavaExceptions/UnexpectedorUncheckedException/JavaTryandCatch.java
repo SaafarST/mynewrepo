@@ -1,4 +1,4 @@
-package Day50.JavaExceptions;
+package Day50.JavaExceptions.UnexpectedorUncheckedException;
 
 public class JavaTryandCatch {
     public static void main(String[] args) {
