@@ -10,7 +10,7 @@ public class OCA4 {
             System.out.println("3");
         }catch (NullPointerException e){
             System.out.println("4");
-            throw e;
+            //throw e;
         }
         System.out.println("5");
     }
