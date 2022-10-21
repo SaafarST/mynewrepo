@@ -5,8 +5,17 @@ public class Travel {
     public String Weather;
 
     public static void main(String[] args) {
-        traveltoOcean(Day51.Tohir.Tasks.Weather.HOT);
-       // traveltoOcean("COLD");
+        try {
+            traveltoOcean(Day51.Tohir.Tasks.Weather.COLD);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            traveltoMountain(Day51.Tohir.Tasks.Weather.COLD);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        // traveltoOcean("COLD");
     }
 
 
@@ -20,7 +29,7 @@ public class Travel {
             case COLD:
                 throw new RuntimeException("Weaher is cold, stay at home");
             case HOT:
-                throw new RuntimeException("Best weather to travel to ocean");
+                System.out.println("Best weather to travel to ocean");
             case WARM:
                 throw new RuntimeException("Not best weather to travel to ocean");
         }
@@ -33,7 +42,7 @@ public class Travel {
             case HOT:
                 throw new NoSuchMethodException("Not best weather to travel to mountains");
             case WARM:
-                throw new NoSuchMethodException("Best weather to travel to mountains");
+                System.out.println("Best weather to travel to mountains");
         }
     }
 }
