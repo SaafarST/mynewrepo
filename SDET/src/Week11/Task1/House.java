@@ -1,4 +1,4 @@
-package Day54.Practice.Week11.Task1;
+package Week11.Task1;
 
 public class House {
 
@@ -12,7 +12,7 @@ public class House {
 
    public House(){}
 
-    public House(String ownerName, ConditionToPriceEnum condition, HouseTypeToPriceEnum houseType, RoomCountToPriceEnum roomCount, int downPayment, int numberOfMonths, StatesTax statesTax, HousePrices housePrices) {
+    public House(String ownerName, ConditionToPriceEnum condition, HouseTypeToPriceEnum houseType, RoomCountToPriceEnum roomCount, int downPayment, int numberOfMonths, StatesTax statesTax) {
         this.ownerName = ownerName;
         this.condition = condition;
         this.houseType = houseType;
@@ -20,7 +20,7 @@ public class House {
         this.downPayment = downPayment;
         this.numberOfMonths = numberOfMonths;
         this.statesTax = statesTax;
-        this.housePrices = housePrices;
+
     }
 
     public String getOwnerName() {
@@ -51,16 +51,5 @@ public class House {
         return statesTax;
     }
 
-    HousePrices housePrices = new HousePrices();
-
-    public void roomCountToPrice(){
-
-        
-
-    }
-
-    public void conditionToPrice(){
-
-    }
 
 }

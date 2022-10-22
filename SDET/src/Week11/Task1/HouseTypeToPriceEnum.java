@@ -1,4 +1,4 @@
-package Day54.Practice.Week11.Task1;
+package Week11.Task1;
 
 public enum HouseTypeToPriceEnum {
     Apartment(20000),Condo(30000),House(40000);
