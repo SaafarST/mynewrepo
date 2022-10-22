@@ -9,8 +9,6 @@ public class AA {
     }
 }
 class BB extends AA{
-
-
     public BB(String str) {
         super(str);
         System.out.println("BB");
@@ -18,14 +16,13 @@ class BB extends AA{
     }
 }
 class CC extends BB{
-
-
     public CC(String str) {
         super(str);
         System.out.println("CC");
         System.out.println(getClass().getSimpleName()+ " : " + (this.name));
     }
 }
+
 class App2{
     public static void main(String[] args) {
         AA aa = new AA("test");
