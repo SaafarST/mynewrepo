@@ -1,4 +1,4 @@
-package Day53.AccessModifiers.AccessModifiersInhertattributesadnMethods.EX1;
+package Day54.AccessModifiers.AccessModifiersInhertattributesadnMethods.EX1;
 
 import java.time.LocalDate;
 

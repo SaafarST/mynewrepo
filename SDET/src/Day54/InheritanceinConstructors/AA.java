@@ -1,4 +1,4 @@
-package Day53.InheritanceinConstructors;
+package Day54.InheritanceinConstructors;
 
 public class AA {
     String name;

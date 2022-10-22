@@ -1,4 +1,4 @@
-package Day53.SuperKeyWords;
+package Day54.SuperKeyWords;
 
 public class B extends A {
     //String name = "SubClass";
