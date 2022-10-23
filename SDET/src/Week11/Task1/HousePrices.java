@@ -1,7 +1,11 @@
 package Week11.Task1;
 
-public class HousePrices {
+public class HousePrices extends House {
     private static int price;
+
+    public HousePrices(String ownername, ConditionToPriceEnum condition, HouseTypeToPriceEnum houseType, RoomCountToPriceEnum roomCount, int downpayment, int numberofmonth, StatesTax statesTax) {
+        super(ownername,condition,houseType,roomCount,downpayment,numberofmonth,statesTax);
+    }
 
     public void setPrice(int price) {
         this.price = price;
@@ -11,82 +15,93 @@ public class HousePrices {
     }
 
     public void addTaxtoPrice(StatesTax statesTax) {
-        this.price = this.price*(1+statesTax.getTaxRate()/100);
+        int tsx = this.price*(statesTax.getTaxRate())/100;
+        this.price += tsx;
     }
 
     public int getPrice() {
+        roomCountToPrice();
+        conditionToPrice();
+        houseTypeToPrice();
+        calculateTotalPriceOfHouse();
         return price;
     }
-    House house = new House();
+
+
 
     public void roomCountToPrice(){
-        switch (house.getRoomCount()){
+        switch (super.getRoomCount()){
             case roomCount0:
-                addPrice(house.getRoomCount().getPrice());
+                addPrice(super.getRoomCount().getPrice());
                 break;
             case roomCount1:
-                addPrice(house.getRoomCount().getPrice());
+                addPrice(super.getRoomCount().getPrice());
                 break;
             case roomCount2:
-                addPrice(house.getRoomCount().getPrice());
+                addPrice(super.getRoomCount().getPrice());
                 break;
             case roomCount3:
-                addPrice(house.getRoomCount().getPrice());;
+                addPrice(super.getRoomCount().getPrice());;
                 break;
             case roomCount4:
-                addPrice(house.getRoomCount().getPrice());
+                addPrice(super.getRoomCount().getPrice());
                 break;
             case roomCount5:
-                addPrice(house.getRoomCount().getPrice());
+                addPrice(super.getRoomCount().getPrice());
                 break;
         }
     }
 
     public void conditionToPrice(){
-        switch (house.getCondition()){
+        switch (super.getCondition()){
             case New:
-                addPrice(house.getCondition().getPrice());
+                addPrice(super.getCondition().getPrice());
                 break;
             case LikeNew:
-                addPrice(house.getCondition().getPrice());
+                addPrice(super.getCondition().getPrice());
                 break;
             case Old:
-                addPrice(house.getCondition().getPrice());
+                addPrice(super.getCondition().getPrice());
+                break;
+            case RenovationRequired:
+                addPrice(super.getCondition().getPrice());
                 break;
         }
     }
 
     public void houseTypeToPrice(){
-        switch (house.getHouseType()){
+        switch (super.getHouseType()){
             case Apartment:
-                addPrice(house.getHouseType().getPrice());
+                addPrice(super.getHouseType().getPrice());
                 break;
             case Condo:
-                addPrice(house.getHouseType().getPrice());
+                addPrice(super.getHouseType().getPrice());
                 break;
             case House:
-                addPrice(house.getHouseType().getPrice());
+                addPrice(super.getHouseType().getPrice());
                 break;
         }
     }
 
     private void calculateTotalPriceOfHouse(){
-        switch (house.getStatesTax()){
+        switch (super.getStatesTax()){
             case NEW_YORK:
-                addTaxtoPrice(house.getStatesTax());
+                addTaxtoPrice(super.getStatesTax());
                 break;
             case NEW_JERSEY:
-                addTaxtoPrice(house.getStatesTax());
+                addTaxtoPrice(super.getStatesTax());
                 break;
             case FLORIDA:
-                addTaxtoPrice(house.getStatesTax());
+                addTaxtoPrice(super.getStatesTax());
                 break;
             case OHIO:
-                addTaxtoPrice(house.getStatesTax());
+                addTaxtoPrice(super.getStatesTax());
                 break;
         }
     }
 
-    /*public int getMonthlyPayment(){
-    }*/
+    public int getMonthlyPayment(){
+        int getmonthlypayment = (price-super.getDownPayment())/super.getNumberOfMonths();
+        return getmonthlypayment;
+    }
 }

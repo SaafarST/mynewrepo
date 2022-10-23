@@ -1,9 +1,9 @@
 package Week11.Task1;
 
 public enum ConditionToPriceEnum {
-    New(5000),LikeNew(4000),Old(3000),RenovationRequired(1500);
+    New(50000),LikeNew(40000),Old(30000),RenovationRequired(15000);
 
-    public int price;
+    private int price;
 
 //    New(50000),
 
