@@ -25,28 +25,15 @@ public abstract class PublicTransport extends Vehicle {
         this.price = price;
     }
 
-    @Override
-    public String getBrand() {
-        return null;
-    }
+    public abstract Lane getLane();
 
-    @Override
-    public String getModel() {
-        return null;
-    }
+    public abstract void setLane(Lane lane);
 
-    @Override
-    public int getSpeed() {
-        return 0;
-    }
+    public abstract WorkingShift getWorkingShift();
 
-    @Override
-    public int getNumberofPassangers() {
-        return 0;
-    }
+    public abstract void setWorkingShift(WorkingShift workingShift);
 
-    @Override
-    public double getGasConsumption() {
-        return 0;
-    }
+    public abstract double getPrice();
+
+    public abstract void setPrice(double price);
 }
