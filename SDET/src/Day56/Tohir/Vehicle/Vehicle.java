@@ -21,13 +21,12 @@ public abstract class Vehicle {
 
     public abstract int getNumberofPassangers();
 
-    public void setNumberofPassangers(int numberofPassangers) {
-        NumberofPassangers = numberofPassangers;
-    }
+    public abstract void setNumberofPassangers(int numberofPassangers);
+
 
     public abstract double getGasConsumption();
 
-    public void setGasConsumption(double gasConsumption) {
-        GasConsumption = gasConsumption;
-    }
+    public abstract void setGasConsumption(double gasConsumption);
+
+    public abstract void print();
 }

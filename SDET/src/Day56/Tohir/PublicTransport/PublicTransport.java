@@ -2,14 +2,6 @@ package Day56.Tohir.PublicTransport;
 
 import Day56.Tohir.Vehicle.Vehicle;
 
-enum WorkingShift{
-    MORNING, DAY, EVENING, NIGHT;
-}
-
-enum Lane{
-    MANHATTAN, QUINS, BROOKLYN, BRONX,STATEN_ISLAND;
-}
-
 public abstract class PublicTransport extends Vehicle {
     protected Lane lane;
     protected WorkingShift workingShift;

@@ -1,42 +1,30 @@
 package Day56.Tohir.Commercial;
 
-public class Taxi extends Commercial {
-    protected String medallionNumber;
-    protected String driverName;
+public class Truck extends Commercial{
+    protected int LicenseID;
+    protected String Company;
 
-    public Taxi(String brand, String model, int speed, String medallionNumber, String driverName) {
-        super(brand, model, speed);
-        this.medallionNumber = medallionNumber;
-        this.driverName = driverName;
+    public int getLicenseID() {
+        return LicenseID;
     }
 
-    public Taxi(String brand, String model, int speed, double pricePerMile, double insurancePrice, String medallionNumber, String driverName) {
-        super(brand, model, speed, pricePerMile, insurancePrice);
-        this.medallionNumber = medallionNumber;
-        this.driverName = driverName;
+    public void setLicenseID(int licenseID) {
+        LicenseID = licenseID;
     }
 
-    public String getMedallionNumber() {
-        return medallionNumber;
+    public String getCompany() {
+        return Company;
     }
 
-    public void setMedallionNumber(String medallionNumber) {
-        this.medallionNumber = medallionNumber;
+    public void setCompany(String company) {
+        Company = company;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
-
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
-
-    public Taxi(String brand, String model, int speed) {
+    public Truck(String brand, String model, int speed) {
         super(brand, model, speed);
     }
 
-    public Taxi(String brand, String model, int speed, double pricePerMile, double insurancePrice) {
+    public Truck(String brand, String model, int speed, double pricePerMile, double insurancePrice) {
         super(brand, model, speed, pricePerMile, insurancePrice);
     }
 
@@ -47,7 +35,7 @@ public class Taxi extends Commercial {
 
     @Override
     public void setPricePerMile(double pricePerMile) {
-    super.pricePerMile = pricePerMile;
+        super.pricePerMile = pricePerMile;
     }
 
     @Override
@@ -57,7 +45,7 @@ public class Taxi extends Commercial {
 
     @Override
     public void setInsurancePrice(double insurancePrice) {
-    super.insurancePrice = insurancePrice;
+        super.insurancePrice = insurancePrice;
     }
 
     @Override
@@ -82,7 +70,7 @@ public class Taxi extends Commercial {
 
     @Override
     public void setNumberofPassangers(int numberofPassangers) {
-        super.NumberofPassangers = numberofPassangers;
+            super.NumberofPassangers = numberofPassangers;
     }
 
     @Override
@@ -98,8 +86,8 @@ public class Taxi extends Commercial {
     @Override
     public void print() {
         System.out.println(getClass().getSimpleName() + "{" +
-                "medallionNumber='" + medallionNumber + '\'' +
-                ", driverName='" + driverName + '\'' +
+                "LicenseID='" + LicenseID + '\'' +
+                ", Company='" + Company + '\'' +
                 ", pricePerMile=" + pricePerMile +
                 ", insurancePrice=" + insurancePrice +
                 ", brand='" + Brand + '\'' +
@@ -108,8 +96,5 @@ public class Taxi extends Commercial {
                 ", numbersOfPassengers=" + NumberofPassangers +
                 ", gasConsumption=" + GasConsumption +
                 '}');
-
     }
-
-
 }
