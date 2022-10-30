@@ -45,6 +45,15 @@ public class iPad extends AbstractTablet{
         return super.memory;
     }
 
+    public void print(){
+
+        System.out.println("iPad{" +
+                "memory=" + memory +
+                ", tabletModels=" + tabletModels +
+                ", name='" + name +
+                ", price=" + price);
+    }
+
     @Override
     public String toString() {
         return "iPad{" +
