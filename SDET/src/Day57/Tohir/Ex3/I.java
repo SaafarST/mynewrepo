@@ -9,16 +9,23 @@ public interface I {
     default void write(){
         System.out.println("Write interface default method");
     }
+
+    void read();
 }
 
 class A implements I{
 
+    @Override
+    public void read() {
+
+    }
 }
 
-class App{
+class App extends A{
     public static void main(String[] args) {
-        A a = new A();
-        a.print();
-        a.write();
+        App app = new App();
+
+        app.read();
+        app.print();
     }
 }

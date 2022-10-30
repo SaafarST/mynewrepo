@@ -1,6 +1,5 @@
 package OCA.Q1;
 
-import Day55.Java.ex1.B;
 
 public class Q1 {
     public static void main(String[] args) {
