@@ -8,10 +8,16 @@ public class Casting {
         ((C) aa).read();
         ((C) aa).write();
 
+        A ac = new C();
+        ((C) ac).read();
+
+
+
         A ab = new B();
         ab.print();
         B b = (B) ab;
         ((B) ab).read();
+        ((C) ab).read();
 
         C cc = new C();
         cc.write();
