@@ -11,7 +11,7 @@ public class openBrowser {
         webDriver.get("https://www.google.com");
         String title = webDriver.getTitle();
         System.out.println("Title is "+title);
-
+        System.out.println("URL is "+webDriver.getCurrentUrl());
         webDriver.quit();
     }
 }
