@@ -9,5 +9,6 @@ public class openOpera {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://yandex.ru");
         System.out.println("URL is "+webDriver.getTitle());
+        webDriver.quit();
     }
 }
