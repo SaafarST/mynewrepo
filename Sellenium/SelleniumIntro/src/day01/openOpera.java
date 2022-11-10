@@ -8,7 +8,8 @@ public class openOpera {
         System.out.println("hello Aydin!");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://yandex.ru");
-        System.out.println("URL is "+webDriver.getTitle());
+        System.out.println("Title is "+webDriver.getTitle());
         webDriver.quit();
+        System.out.println("URL is "+webDriver.getCurrentUrl());
     }
 }
