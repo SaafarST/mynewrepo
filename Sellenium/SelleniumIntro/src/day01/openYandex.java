@@ -7,9 +7,11 @@ public class openYandex {
     public static void main(String[] args) {
         System.out.println("hello Aydin!");
         WebDriver webDriver = new ChromeDriver();
-        webDriver.get("https://yandex.ru");
+        webDriver.get("https://amazon.com");
         System.out.println("Title is "+webDriver.getTitle());
-        webDriver.quit();
         System.out.println("URL is "+webDriver.getCurrentUrl());
+        System.out.println(webDriver.getPageSource());
+
+        webDriver.quit();
     }
 }
