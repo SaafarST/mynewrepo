@@ -20,7 +20,6 @@ public class XPathDemo {
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
         driver.findElement(By.xpath(xPathLogin)).click();
-        
         Thread.sleep(3000);
         //driver.close();
     }
