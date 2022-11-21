@@ -10,7 +10,6 @@ public class XPathDemo {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get(URL);
-        //driver.findElement(By.name("txtUsername")).sendKeys("Hi");
         String absolutexPath = "/html/body/div/div/div/div/div[2]/form/div[2]/input";
         String relativexPath = "//input[@name='txtUsername']";
         String absolutexPathChrome = "/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[2]/input";
