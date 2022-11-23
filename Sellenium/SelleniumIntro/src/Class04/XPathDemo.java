@@ -21,15 +21,18 @@ public class XPathDemo {
         String xPathpassword = "//*[@id=\"txtPassword\"]";
         String xPathLogin = "//input[@value='LOGIN']";
 
-        String xPathCOntainsByText = "//a[contains(text(),'Welcome')]";
+        String xPathCOntainsByText = "//a[contains(text(),'Welcome Admin')]";
         String xPathContainsByText01 = "//a[contains(text(),'Logout')]";
         String xPathContainsByAttribute = "//a[contains(@class,'panel')]";
+
+        String xPathByParent = "//div[@id='welcome-menu']//a";
 
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
         driver.findElement(By.xpath(xPathLogin)).click();
         driver.findElement(By.xpath(xPathCOntainsByText)).click();
+        driver.findElement(By.xpath(xPathByParent)).click();
         Thread.sleep(3000);
-        //driver.close();
+        driver.close();
     }
 }
