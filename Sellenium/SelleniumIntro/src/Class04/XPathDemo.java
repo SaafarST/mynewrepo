@@ -17,13 +17,14 @@ public class XPathDemo {
         String realtivexPathChrome = "//*[@id=\"divUsername\"]";
         String xPathpassword = "//*[@id=\"txtPassword\"]";
         String xPathLogin = "//input[@value='LOGIN']";
-        String xPathContainsByAttribute = "//a[contains(@class,'panel')]";
         String xPathCOntainsByText = "//a[contains(text(),'Welcome')]";
+        String xPathContainsByText01 = "//a[contains(text(),'Logout')]";
+        String xPathContainsByAttribute = "//a[contains(@class,'panel')]";
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
         driver.findElement(By.xpath(xPathLogin)).click();
         driver.findElement(By.xpath(xPathCOntainsByText)).click();
         Thread.sleep(3000);
-        driver.close();
+        //driver.close();
     }
 }
