@@ -27,11 +27,22 @@ public class XPathDemo {
 
         String xPathByParent = "//div[@id='welcome-menu']//a";
 
+        String xPathStartwith_0 = "//a[starts-with(text(),'Log')]";
+        String xPathStartswith_text = "//a[starts-with(text(),'Welcome')]";
+        String xPathStartwith_attribute_byID = "//a[starts-with(@id,'wel')]";
+        String xPathStartwith_attribute_byClass = "//a[starts-with(@class,'panel')]";
+
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
         driver.findElement(By.xpath(xPathLogin)).click();
-        driver.findElement(By.xpath(xPathCOntainsByText)).click();
-        driver.findElement(By.xpath(xPathByParent)).click();
+
+        driver.findElement(By.xpath(xPathStartwith_attribute_byID));
+        //driver.findElement(By.xpath(xPathStartswith_text)).click();
+
+        Thread.sleep(100);
+        driver.findElement(By.xpath(xPathContainsByText01)).click();
+
+        //driver.findElement(By.xpath(xPathByParent)).click();
         Thread.sleep(3000);
         driver.close();
     }
