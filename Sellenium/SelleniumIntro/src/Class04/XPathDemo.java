@@ -33,7 +33,7 @@ public class XPathDemo {
         String xPathStartwith_attribute_byID = "//a[starts-with(@id,'wel')]";//xPath startswith function by attribute
         String xPathStartwith_attribute_byClass = "//a[starts-with(@class,'panel')]";//xPath startswith function by attribu
 
-        driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");
+        driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");//Set name to Admin
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
         driver.findElement(By.xpath(xPathLogin)).click();
 
