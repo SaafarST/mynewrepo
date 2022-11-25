@@ -34,12 +34,11 @@ public class XPathDemo {
         String xPathStartwith_attribute_byClass = "//a[starts-with(@class,'panel')]";//xPath startswith function by attribu
 
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");//Set name to Admin
-        driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");
+        driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");//Set password
         driver.findElement(By.xpath(xPathLogin)).click();
 
-        driver.findElement(By.xpath(xPathStartwith_attribute_byID));
+        driver.findElement(By.xpath(xPathStartwith_attribute_byID));//Use start-with function by attribute to find ID
         //driver.findElement(By.xpath(xPathStartswith_text)).click();
-
         Thread.sleep(100);
         driver.findElement(By.xpath(xPathContainsByText01)).click();
 
