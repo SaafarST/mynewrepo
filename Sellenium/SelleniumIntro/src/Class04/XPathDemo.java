@@ -39,11 +39,15 @@ public class XPathDemo {
 
         driver.findElement(By.xpath(xPathStartwith_attribute_byID));//Use start-with function by attribute to find ID
         //driver.findElement(By.xpath(xPathStartswith_text)).click();
+
         Thread.sleep(100);
+
         driver.findElement(By.xpath(xPathContainsByText01)).click();
 
         //driver.findElement(By.xpath(xPathByParent)).click();
+
         Thread.sleep(3000);
+        
         driver.close();
     }
 }
