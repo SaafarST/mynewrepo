@@ -35,7 +35,7 @@ public class XPathDemo {
 
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");//Set name to Admin
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");//Set password
-        driver.findElement(By.xpath(xPathLogin)).click();
+        driver.findElement(By.xpath(xPathLogin)).click();//Click to Login button
 
         driver.findElement(By.xpath(xPathStartwith_attribute_byID));//Use start-with function by attribute to find ID
         //driver.findElement(By.xpath(xPathStartswith_text)).click();
