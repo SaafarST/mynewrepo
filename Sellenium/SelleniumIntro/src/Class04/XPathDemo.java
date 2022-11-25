@@ -11,6 +11,7 @@ public class XPathDemo {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get(URL);
+        
         String absolutexPath = "/html/body/div/div/div/div/div[2]/form/div[2]/input";
 
         String relativexPath = "//input[@name='txtUsername']";
@@ -47,7 +48,7 @@ public class XPathDemo {
         //driver.findElement(By.xpath(xPathByParent)).click();
 
         Thread.sleep(3000);
-        
+
         driver.close();
     }
 }
