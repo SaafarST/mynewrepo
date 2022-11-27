@@ -52,7 +52,10 @@ public class XPathDemo {
         String xPathFindHarry = "//a[text()='Harry']";
         String xPathFind1stScrum = "(//*[text()='Scrum Master'])[1]";
         String xPathForJobTitle = "(//*[@id='resultTable']//th)[5]";
-
+        String xPathFindBrand_01 = "//div[@id='branding']/parent::div";//takes one step up
+        String xPathFindBrand_02 = "//div[@id='branding']/ancestor::div";//takes to the oldest
+        String xPathFindBrand_03 = "//div[@id='branding']/following-sibling::div";//takes to immidiate sibling below
+        String xPathFindBrand_04 = "//div[@id='branding']/preceding-sibling::div";//takes to immidiate sibling above
         String xPathForSearchButton = "//input[@id='searchBtn' or @value='Search']";
         driver.findElement(By.xpath(xPathForSearchButton)).click();
 
