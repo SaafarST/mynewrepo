@@ -11,7 +11,7 @@ public class XPathDemo {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get(URL);
-        
+
         String absolutexPath = "/html/body/div/div/div/div/div[2]/form/div[2]/input";
 
         String relativexPath = "//input[@name='txtUsername']";
@@ -33,22 +33,17 @@ public class XPathDemo {
 
         String xPathStartwith_attribute_byID = "//a[starts-with(@id,'wel')]";//xPath startswith function by attribute
         String xPathStartwith_attribute_byClass = "//a[starts-with(@class,'panel')]";//xPath startswith function by attribu
+        String xPathandor_1 = "//input[@id='searchBtn' or @value='Search']";
+        String xPathandor_2 = "//input[@id='searchBtn' and @value='Search']";
+        ////*[@id="menu_admin_viewAdminModule"]/b
+
 
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");//Set name to Admin
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");//Set password
         driver.findElement(By.xpath(xPathLogin)).click();//Click to Login button
-
-        driver.findElement(By.xpath(xPathStartwith_attribute_byID));//Use start-with function by attribute to find ID
-        //driver.findElement(By.xpath(xPathStartswith_text)).click();
-
-        Thread.sleep(100);
-
-        driver.findElement(By.xpath(xPathContainsByText01)).click();
-
-        //driver.findElement(By.xpath(xPathByParent)).click();
+        //driver.findElement((By.xpath(xPathandor_1))).click();
 
         Thread.sleep(3000);
-
-        driver.close();
+        //driver.close();
     }
 }
