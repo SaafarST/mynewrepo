@@ -41,9 +41,17 @@ public class XPathDemo {
         driver.findElement(By.xpath(absolutexPath)).sendKeys("Admin");//Set name to Admin
         driver.findElement(By.xpath(xPathpassword)).sendKeys("Exelent2022Sdet!");//Set password
         driver.findElement(By.xpath(xPathLogin)).click();//Click to Login button
+
+        String xPathForPIM = "//*[@id=\"menu_pim_viewPimModule\"]/b";
+        driver.findElement(By.xpath(xPathForPIM)).click();
+
+        String xPathForEmployeeList = "//a[starts-with(@id,'menu_pim')]";
+        driver.findElement(By.xpath(xPathForEmployeeList)).click();
+
+        String
         //driver.findElement((By.xpath(xPathandor_1))).click();
 
         Thread.sleep(3000);
-        //driver.close();
+        driver.close();
     }
 }
