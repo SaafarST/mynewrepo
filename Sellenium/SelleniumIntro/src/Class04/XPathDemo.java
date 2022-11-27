@@ -48,8 +48,13 @@ public class XPathDemo {
         String xPathForEmployeeList = "//a[starts-with(@id,'menu_pim')]";
         driver.findElement(By.xpath(xPathForEmployeeList)).click();
 
-        String
-        //driver.findElement((By.xpath(xPathandor_1))).click();
+        String xPathFindJoe = "//*[text()='Joe']";// --->//*[contains(text(),'Joe')] also works
+        String xPathFindHarry = "//a[text()='Harry']";
+        String xPathFind1stScrum = "(//*[text()='Scrum Master'])[1]";
+        String xPathForJobTitle = "(//*[@id='resultTable']//th)[5]";
+
+        String xPathForSearchButton = "//input[@id='searchBtn' or @value='Search']";
+        driver.findElement(By.xpath(xPathForSearchButton)).click();
 
         Thread.sleep(3000);
         driver.close();
