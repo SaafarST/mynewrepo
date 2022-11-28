@@ -50,11 +50,15 @@ public class someCommandsInSellenium {
         String cssLogged_in = "div.login_info";
         WebElement loggedInUser = driver.findElement(By.cssSelector(cssLogged_in));
         String loggedInUserText = loggedInUser.getText();
-        System.out.println(loggedInUserText);
-        if (loggedInUserText.contains(user)){
 
+        if (loggedInUserText.contains(user)){
+            System.out.println("Authorized user is able to login successfully. Test Passed.");
+        } else {
+            System.out.println("Authorized user is NOT able to login successfully. Test Failed.");
         }
 
+        System.out.println(loggedInUserText);
+        Thread.sleep(2000);
         driver.close();
 
     }
