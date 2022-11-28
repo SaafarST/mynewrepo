@@ -56,8 +56,8 @@ public class someCommandsInSellenium {
         } else {
             System.out.println("Authorized user is NOT able to login successfully. Test Failed.");
         }
-
         System.out.println(loggedInUserText);
+
         Thread.sleep(2000);
         driver.close();
 
