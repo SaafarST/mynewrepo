@@ -28,7 +28,7 @@ public class cssDemo {
 
         String cssWelcomeAdmin = "a[class$='Trigger']";
         // In order to verify we are logged in, we locate and click on the 'Welcome Admin' - top right corner of the dashboard.
-        driver.findElement(By.cssSelector(cssLogin)).click();
+        driver.findElement(By.cssSelector(cssWelcomeAdmin)).click();
         Thread.sleep(2000);
 
         // We locate and click on the Logout button.

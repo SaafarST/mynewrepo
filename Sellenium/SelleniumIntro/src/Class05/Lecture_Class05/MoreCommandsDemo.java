@@ -1,4 +1,4 @@
-package Class05;
+package Class05.Lecture_Class05;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
