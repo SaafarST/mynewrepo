@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.security.SecureRandom;
+
 public class someCommandsInSellenium {
     private static String url ="http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx";
     private static String user = "Tester";
@@ -36,6 +38,22 @@ public class someCommandsInSellenium {
         loginButton.click();
         Thread.sleep(2000);
 
+        String xPathWbOrderLogo = "//ul[@id]/preceding-sibling::h1";
+        WebElement webOrdersLogo = driver.findElement(By.xpath(xPathWbOrderLogo));
+        boolean logoDisplayed = webOrdersLogo.isDisplayed();
+        if (logoDisplayed){
+            System.out.println("Logo is displayed, test case passed");
+        }else {
+            System.out.println("Logo is not displayed, test case failed");
+        }
+
+        String cssLogged_in = "div.login_info";
+        WebElement loggedInUser = driver.findElement(By.cssSelector(cssLogged_in));
+        String loggedInUserText = loggedInUser.getText();
+        System.out.println(loggedInUserText);
+        if (loggedInUserText.contains(user)){
+
+        }
 
         driver.close();
 
