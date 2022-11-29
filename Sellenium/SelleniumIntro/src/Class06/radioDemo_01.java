@@ -20,6 +20,15 @@ public class radioDemo_01 {
          boolean selected = driver.findElement(By.xpath(xPathMozilla)).isSelected();
 
         System.out.println(displayed+" "+enabled+" "+selected);
+
+        String xPathIE = "//input[@name='browser']";//css = input[value='Mozilla']
+
+        boolean displayedIE = driver.findElement(By.xpath(xPathMozilla)).isDisplayed();
+        boolean enabledIE = driver.findElement(By.xpath(xPathMozilla)).isEnabled();
+        boolean selectedIE = driver.findElement(By.xpath(xPathMozilla)).isSelected();
+
+        System.out.println(displayedIE+" "+enabledIE+" "+selectedIE);
+
         Thread.sleep(2000);
         driver.close();
     }
