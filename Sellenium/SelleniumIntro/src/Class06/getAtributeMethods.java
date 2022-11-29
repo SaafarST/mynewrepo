@@ -25,6 +25,7 @@ public class getAtributeMethods {
         String type = username.getAttribute("type");
         System.out.println("Type="+type);
 
+        username.sendKeys("Tester");
         String attribute = username.getAttribute("value");
         System.out.println("value="+attribute);
 
