@@ -17,6 +17,8 @@ public class radioDemo_02 {
         WebElement checkBoxThree = driver.findElement(By.cssSelector(cssThree));
          boolean checkBoxThreeEnabled = checkBoxThree.isEnabled();
         System.out.println(checkBoxThreeEnabled);
+
+        
         Thread.sleep(2000);
         driver.close();
     }
