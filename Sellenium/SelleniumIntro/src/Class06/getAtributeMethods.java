@@ -20,6 +20,13 @@ public class getAtributeMethods {
         String byAttribute_Name = "txtUsername";
         WebElement username = driver.findElement(By.name(byAttribute_Name));
         String id = username.getAttribute("id");
+        System.out.println("ID="+id);
+
+        String type = username.getAttribute("type");
+        System.out.println("Type="+type);
+
+        String attribute = username.getAttribute("value");
+        System.out.println("value="+attribute);
 
         /*String byAttr_ID = "txtPassword";
         WebElement password = driver.findElement((By.id(byAttr_ID)));
