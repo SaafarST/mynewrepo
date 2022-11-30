@@ -42,8 +42,10 @@ public class radioDemo_03 {
 
         System.out.println("*************************");
         for(WebElement element:browsers){
-            if(element.getAttribute("value")=="Mozilla"){
-                System.out.println(element);
+            if(element.getAttribute("value").equals("Mozilla")){
+                element.click();
+                System.out.println("'Mozilla' found and selected");
+                break;
             }
         }
 
