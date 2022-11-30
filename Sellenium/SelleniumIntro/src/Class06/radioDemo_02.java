@@ -27,7 +27,7 @@ public class radioDemo_02 {
         String cssThree = "input[value='3']";//or input#checkbox-3
         WebElement checkBoxThree = driver.findElement(By.cssSelector(cssThree));
         boolean checkBoxThreeEnabled = checkBoxThree.isEnabled();
-        System.out.println(checkBoxThreeEnabled);
+        System.out.println("checkBoxThree is Enabled = " + checkBoxThreeEnabled);
 
         Thread.sleep(2000);
         driver.close();
