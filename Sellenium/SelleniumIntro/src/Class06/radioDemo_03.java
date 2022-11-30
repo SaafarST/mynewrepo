@@ -33,11 +33,18 @@ public class radioDemo_03 {
             System.out.println(element.getAttribute("value"));
         }
         System.out.println("*************************");
-        
+
         for (WebElement element:browsers){
         if(element.isEnabled()&& !element.isSelected()){
             System.out.println("element = " + element.getAttribute("value"));
         }
+        }
+
+        System.out.println("*************************");
+        for(WebElement element:browsers){
+            if(element.getAttribute("value")=="Mozilla"){
+                System.out.println(element);
+            }
         }
 
         Thread.sleep(2000);
