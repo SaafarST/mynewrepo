@@ -27,10 +27,18 @@ public class radioDemo_03 {
             count++;
             System.out.println("count = " + count);
         }
+        System.out.println("*************************");
+
         for (WebElement element:browsers){
             System.out.println(element.getAttribute("value"));
         }
-
+        System.out.println("*************************");
+        
+        for (WebElement element:browsers){
+        if(element.isEnabled()&& !element.isSelected()){
+            System.out.println("element = " + element.getAttribute("value"));
+        }
+        }
 
         Thread.sleep(2000);
         driver.close();
