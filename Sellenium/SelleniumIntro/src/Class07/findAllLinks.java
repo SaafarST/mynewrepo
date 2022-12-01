@@ -23,7 +23,8 @@ public class findAllLinks {
         for(WebElement link:allLinks){
             if (!link.getText().isEmpty()&&!link.getText().isBlank()){
             System.out.println(link.getText());
-            count++;}
+            count++;
+            }
 
         }
         System.out.println("Number of links with text: "+count);
