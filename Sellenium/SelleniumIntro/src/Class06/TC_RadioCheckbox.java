@@ -20,6 +20,7 @@ import java.util.List;
         driver.findElement(By.cssSelector(cssYellow)).click();
 
         List<WebElement> elements = driver.findElements(By.name("color"));
+        
         for(WebElement element:elements){
             if (element.isSelected()){
                 System.out.println(element.getAttribute("value"));
