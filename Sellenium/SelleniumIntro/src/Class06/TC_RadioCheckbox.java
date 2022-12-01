@@ -16,8 +16,8 @@ import java.util.List;
         driver.get(url);
         String cssYellow = "input[value='yellow']";
         String cssOrange = "input[value='orange']";
-        driver.findElement(By.cssSelector(cssOrange)).;
-        driver.findElement(By.cssSelector(cssYellow)).submit();
+        driver.findElement(By.cssSelector(cssOrange)).click();
+        driver.findElement(By.cssSelector(cssYellow)).click();
 
         List<WebElement> elements = driver.findElements(By.name("color"));
         for(WebElement element:elements){
