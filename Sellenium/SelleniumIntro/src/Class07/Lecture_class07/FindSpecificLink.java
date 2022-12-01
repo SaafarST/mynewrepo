@@ -1,4 +1,4 @@
-package Class07;
+package Class07.Lecture_class07;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

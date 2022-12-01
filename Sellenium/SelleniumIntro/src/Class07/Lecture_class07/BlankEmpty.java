@@ -1,4 +1,4 @@
-package Class07;
+package Class07.Lecture_class07;
 
 public class BlankEmpty {
     public static void main(String[] args) {
