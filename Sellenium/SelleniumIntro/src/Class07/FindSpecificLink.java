@@ -30,7 +30,10 @@ public class FindSpecificLink {
 
 
         int linkSize = linksOnEx.size();
-        System.out.println("Количество ссылок на сайте "+url+ = " + linkSize);
+        System.out.println("Количество ссылок на сайте "+url+" равно =" + linkSize);
+
+        System.out.println("Тест: найти ссылу на 'Главная страница'="+expectedText);
+        System.out.println("Если нет, то тест не пройден.");
 
         int count = 0;
         for(WebElement link:linksOnEx){
