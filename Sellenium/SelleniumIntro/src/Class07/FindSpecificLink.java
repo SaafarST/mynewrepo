@@ -16,7 +16,7 @@ import java.util.List;
  *      5. Close the browser
  */
 public class FindSpecificLink {
-    static String expectedText = "Enroll Now";
+    static String expectedText = "Home";
     private static String url = "https://exelenter.com";
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe"); // window users add '.exe' at the end
@@ -28,13 +28,13 @@ public class FindSpecificLink {
         //Git and get all links on Exelenter website:
         List<WebElement> linksOnEx = driver.findElements(By.tagName("a"));
 
-        
+
         int linkSize = linksOnEx.size();
-        System.out.println("linksize = " + linkSize);
+        System.out.println("Количество ссылок на сайте "+url+ = " + linkSize);
 
         int count = 0;
         for(WebElement link:linksOnEx){
-            if (!link.getText().isEmpty()){
+            if (!link.getText().isEmpty()&&link.getText().equals(("Home"))){
             System.out.println(link.getText());
             count++;}
         }
