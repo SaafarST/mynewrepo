@@ -41,10 +41,11 @@ public class FindSpecificLink {
         //Функция для нахождения ссылок на 'Главная страница' и считания количество этих ссылок
         for(WebElement link:linksOnEx){
             if (!link.getText().isEmpty()&&link.getText().equals(("Home"))){
-            System.out.println(link.getText());
+            System.out.println("Тест пройден, ссылка на 'Главная страница' существует.");
+            System.out.println("Текст сылки на 'Главная страница' "+link.getText());
             count++;}
         }
-        System.out.println("count of filed links = " + count);
+        System.out.println("Количество ссылок на 'Главная страница' = " + count);
 
         Thread.sleep(2000);
         driver.close();
