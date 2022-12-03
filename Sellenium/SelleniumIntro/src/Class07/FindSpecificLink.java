@@ -23,8 +23,12 @@ public class FindSpecificLink {
         WebDriver driver = new ChromeDriver();
         driver.get(url);
 
+        Thread.sleep(3000);
+
+        //Git and get all links on Exelenter website:
         List<WebElement> linksOnEx = driver.findElements(By.tagName("a"));
 
+        
         int linkSize = linksOnEx.size();
         System.out.println("linksize = " + linkSize);
 
