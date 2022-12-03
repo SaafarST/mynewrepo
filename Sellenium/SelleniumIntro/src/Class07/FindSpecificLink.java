@@ -16,7 +16,7 @@ import java.util.List;
  *      5. Close the browser
  */
 public class FindSpecificLink {
-    static String expectedText = "Home";
+    static String expectedText = "Tohir";
     private static String url = "https://exelenter.com";
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe"); // window users add '.exe' at the end
@@ -40,10 +40,13 @@ public class FindSpecificLink {
 
         //Функция для нахождения ссылок на 'Главная страница' и считания количество этих ссылок
         for(WebElement link:linksOnEx){
-            if (!link.getText().isEmpty()&&link.getText().equals(("Home"))){
+            if (!link.getText().isEmpty()&&link.getText().equals((expectedText))){
             System.out.println("Тест пройден, ссылка на 'Главная страница' существует.");
             System.out.println("Текст сылки на 'Главная страница' "+link.getText());
             count++;}
+            else {
+                System.out.println("Тест не проден, ссылка не существует для "+expectedText);
+            }
         }
         System.out.println("Количество ссылок на 'Главная страница' = " + count);
 
