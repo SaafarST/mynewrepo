@@ -25,13 +25,16 @@ public class FindSpecificLink {
 
         List<WebElement> linksOnEx = driver.findElements(By.tagName("a"));
 
-        int linksize = linksOnEx.size();
-        System.out.println("linksize = " + linksize);
+        int linkSize = linksOnEx.size();
+        System.out.println("linksize = " + linkSize);
 
+        int count = 0;
         for(WebElement link:linksOnEx){
+            if (!link.getText().isEmpty()){
             System.out.println(link.getText());
+            count++;}
         }
-
+        System.out.println("count of filed links = " + count);
 
         Thread.sleep(2000);
         driver.close();
