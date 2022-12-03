@@ -35,7 +35,10 @@ public class FindSpecificLink {
         System.out.println("Тест: найти ссылу на 'Главная страница'="+expectedText);
         System.out.println("Если нет, то тест не пройден.");
 
+        //Количество ссылок на 'Главная страница'
         int count = 0;
+
+        //Функция для нахождения ссылок на 'Главная страница' и считания количество этих ссылок
         for(WebElement link:linksOnEx){
             if (!link.getText().isEmpty()&&link.getText().equals(("Home"))){
             System.out.println(link.getText());
