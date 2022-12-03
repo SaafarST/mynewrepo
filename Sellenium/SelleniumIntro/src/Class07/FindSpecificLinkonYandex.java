@@ -21,7 +21,10 @@ public class FindSpecificLinkonYandex {
 
         //внести текст "Мария шарапова"
         findWindow.sendKeys("Мария шарапова");
-        driver.findElement(By.cssSelector("body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b")).submit();
+
+        //css на Submit
+        String cssSubmit = "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b";
+        driver.findElement(By.cssSelector(cssSubmit)).submit();
 
         Thread.sleep(7000);
         driver.close();
