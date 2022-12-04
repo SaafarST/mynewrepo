@@ -2,7 +2,10 @@ package Class09;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 public class _01_ConnectWithPropertierFile {
     public static void main(String[] args) throws IOException {
@@ -28,6 +31,22 @@ public class _01_ConnectWithPropertierFile {
          String browser = properties.getProperty("browser");
         System.out.println("browser = " + browser);
 
+        System.out.println("----values only----");
+        final Collection<Object> values = properties.values();
+        for(Object value:values){
+            System.out.println("value = " + value);
+        }
+        System.out.println("----keys only----");
+        final Set<Object> keys = properties.keySet();
+        for(Object key:keys)
+        {
+            System.out.println("key = " + key);
+        }
+
+        final Set<Map.Entry<Object, Object>> entries = properties.entrySet();
+        for(Map.Entry<Object,Object> entry:entries){
+            System.out.println(" " + entry);
+        }
 
     }
 }
