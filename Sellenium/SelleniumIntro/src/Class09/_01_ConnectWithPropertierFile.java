@@ -22,7 +22,11 @@ public class _01_ConnectWithPropertierFile {
         Properties properties = new Properties();
         properties.load(fileInputStream);
 
+         String url = properties.getProperty("url");
+        System.out.println("url = " + url);
 
+         String browser = properties.getProperty("browser");
+        System.out.println("browser = " + browser);
 
 
     }
