@@ -1,4 +1,4 @@
-package Class08;
+package Class08.Lecture_class08;
 
 import java.util.ArrayList;
 import java.util.Iterator;

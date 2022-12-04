@@ -1,4 +1,4 @@
-package Class08;
+package Class08.Lecture_class08;
 
 public abstract class _03_Cars {
     String fuelType;

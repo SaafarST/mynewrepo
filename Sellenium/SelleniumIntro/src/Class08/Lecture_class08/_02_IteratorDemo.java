@@ -1,4 +1,4 @@
-package Class08;
+package Class08.Lecture_class08;
 
 import org.openqa.selenium.WebElement;
 
