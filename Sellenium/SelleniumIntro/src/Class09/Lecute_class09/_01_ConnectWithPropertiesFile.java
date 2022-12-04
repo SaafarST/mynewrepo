@@ -1,4 +1,4 @@
-package Class09;
+package Class09.Lecute_class09;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
