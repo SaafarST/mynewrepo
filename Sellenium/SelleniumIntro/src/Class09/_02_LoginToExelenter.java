@@ -18,15 +18,15 @@ public class _02_LoginToExelenter {
         properties.load(fis);
 
         final String browser = properties.getProperty("browser");
-        switch (browser){
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        switch (browser) {
+            case "chrome" -> {
+                System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
                 driver = new ChromeDriver();
-                break;
-            case "firefox":
-                System.setProperty("webdriver.msedgedriver.driver","drivers/gecko.exe");
+            }
+            case "firefox" -> {
+                System.setProperty("webdriver.msedgedriver.driver", "drivers/gecko.exe");
                 driver = new FirefoxDriver();
-                break;
+            }
         }
 
         driver.get(properties.getProperty("url"));
