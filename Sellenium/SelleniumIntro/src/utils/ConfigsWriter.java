@@ -18,6 +18,6 @@ public class ConfigsWriter {
 
         FileOutputStream fos = new FileOutputStream(filePath);
         properties.store(fos,"Adding phone number and email");
-        
+
     }
 }
