@@ -24,7 +24,7 @@ public class _02_LoginToExelenter {
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.chrome.driver","drivers/geckodriver");
+                System.setProperty("webdriver.gecko.driver","drivers/geckodriver");
                 driver = new FirefoxDriver();
                 break;
         }
