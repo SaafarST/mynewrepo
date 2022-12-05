@@ -29,6 +29,7 @@ public class _02_LoginToExelenter {
                 break;
         }
 
+        driver.get(properties.getProperty("url"));
         Thread.sleep(2000);
         driver.close();
     }
