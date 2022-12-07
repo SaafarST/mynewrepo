@@ -16,10 +16,19 @@ public class ConfigsReader {
         System.out.println("browser = " + browser);
 
     }
-    public static void loadProperties(String filePath) throws IOException {
+    public static void loadProperties(String filePath) {
 
-        FileInputStream fis = new FileInputStream(filePath);
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(filePath);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Properties properties = new Properties();
-        properties.load(fis);
+        try {
+            properties.load(fis);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
