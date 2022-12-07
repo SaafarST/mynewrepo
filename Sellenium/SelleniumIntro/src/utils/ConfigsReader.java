@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigsReader {
+    static Properties properties;
     public static void main(String[] args) throws IOException {
         String filePath = System.getProperty("user.dir")+"/configs/configuration.properties";
         FileInputStream fis = new FileInputStream(filePath);
@@ -20,15 +21,17 @@ public class ConfigsReader {
 
         try {
             FileInputStream fis = new FileInputStream(filePath);
-            Properties properties = new Properties();
+            properties = new Properties();
             properties.load(fis);
         } catch (FileNotFoundException e) {
-
             e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+    }
 
+    public static String getProperties(String key){
+        return properties.getProperty(key);
 
     }
 }
