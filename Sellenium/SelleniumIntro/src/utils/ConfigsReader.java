@@ -18,17 +18,17 @@ public class ConfigsReader {
     }
     public static void loadProperties(String filePath) {
 
-        FileInputStream fis = null;
         try {
-            fis = new FileInputStream(filePath);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        Properties properties = new Properties();
-        try {
+            FileInputStream fis = new FileInputStream(filePath);
+            Properties properties = new Properties();
             properties.load(fis);
+        } catch (FileNotFoundException e) {
+
+            e.printStackTrace();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
     }
 }
