@@ -7,16 +7,11 @@ import java.util.Properties;
 
 public class ConfigsReader {
     static Properties properties;
-    public static void main(String[] args) throws IOException {
-        String filePath = System.getProperty("user.dir")+"/configs/configuration.properties";
-        FileInputStream fis = new FileInputStream(filePath);
-        Properties properties = new Properties();
-        properties.load(fis);
+/**
+ * This method will locate and prepare(load) the Properties file
+ * @param filePath specify file path/location here.
+ * */
 
-        final String browser = properties.getProperty("browser");
-        System.out.println("browser = " + browser);
-
-    }
     public static void loadProperties(String filePath) {
 
         try {
@@ -29,7 +24,11 @@ public class ConfigsReader {
             e.printStackTrace();
         }
     }
-
+/**
+ * This method will return value of the specification key from the properties file
+ * @param key accepted as a String
+ * @return value of the given key (from the Properties file).
+ * */
     public static String getProperties(String key){
         return properties.getProperty(key);
 
