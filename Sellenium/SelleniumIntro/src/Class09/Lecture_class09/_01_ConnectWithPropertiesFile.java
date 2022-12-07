@@ -1,8 +1,6 @@
-package Class09.Lecute_class09;
+package Class09.Lecture_class09;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
