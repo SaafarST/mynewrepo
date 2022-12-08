@@ -29,7 +29,7 @@ public class BaseClass {
         driver.get(ConfigsReader.getProperties("url"));
     }
     public static void tearDown(){
-        if(driver!= null){
+        if(driver!= null){ //We use this to prevent NullPointerException
         driver.quit();}
     }
 }
