@@ -28,7 +28,9 @@ public class BaseClass {
 
         driver.get(ConfigsReader.getProperties("url"));
     }
-    public static void tearDown(){
+    public static void tearDown() throws InterruptedException {
+
+        Thread.sleep(2000);
         if(driver!= null){ //We use this to prevent NullPointerException
         driver.quit();}
     }
