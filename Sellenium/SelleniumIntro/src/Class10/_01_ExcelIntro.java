@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class _01_ExcelIntro {
     public static void main(String[] args) throws IOException {
+        
         String filepath = "C:\\Users\\Nju\\Desktop\\SD\\Excel\\Book1.xlsx";
         FileInputStream fis = new FileInputStream(filepath);
 
@@ -31,7 +32,6 @@ public class _01_ExcelIntro {
 
         Cell cell3 = sheet.getRow(2).getCell(2);
         System.out.println("cell3 = " + cell3);
-
 
     }
 }
