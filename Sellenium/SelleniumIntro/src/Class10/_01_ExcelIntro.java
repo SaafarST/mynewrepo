@@ -21,6 +21,10 @@ public class _01_ExcelIntro {
         Cell cell = row.getCell(0);
         System.out.println("cell = " + cell);
 
+        Row row1 = sheet.getRow(1);
+        Cell cell1 = row1.getCell(3);
+        System.out.println("cell1 = " + cell1);
+
 
     }
 }
