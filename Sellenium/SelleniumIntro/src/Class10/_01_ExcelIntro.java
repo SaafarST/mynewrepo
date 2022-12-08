@@ -29,6 +29,9 @@ public class _01_ExcelIntro {
         Cell cell2 = row2.getCell(3);
         System.out.println("cell1 = " + cell2);
 
+        Cell cell3 = sheet.getRow(2).getCell(2);
+        System.out.println("cell3 = " + cell3);
+
 
     }
 }
