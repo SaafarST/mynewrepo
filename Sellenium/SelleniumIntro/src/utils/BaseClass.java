@@ -25,7 +25,11 @@ public class BaseClass {
             }
             default -> throw new RuntimeException("Browser is not imported");
         }
-        driver.get(ConfigsReader.getProperties("url"));
 
+        driver.get(ConfigsReader.getProperties("url"));
+    }
+    public static void tearDown(){
+        if(driver!= null){
+        driver.quit();}
     }
 }
