@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+//NOTE: THIS CLASS LOADS FIS AND READS FROM PROPERTY FILE.
+
 public class ConfigsReader {
     static Properties properties;
 /**
