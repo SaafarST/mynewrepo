@@ -32,7 +32,7 @@ public class _02_ReadDormExcel {
             for (int j = 0; j < cols; j++) {
                 System.out.print(sheet1.getRow(i).getCell(j)+" ");
             }
-            System.out.println("\n ******* ");
+            System.out.println("");
         }
 
     }
