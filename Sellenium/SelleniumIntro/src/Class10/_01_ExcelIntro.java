@@ -36,6 +36,15 @@ public class _01_ExcelIntro {
         final CellType cellType = sheet.getRow(0).getCell(2).getCellType();
         System.out.println("cellType = " + cellType);
 
+        final String stringCellValue = sheet.getRow(0).getCell(2).getStringCellValue();//toString()
+        System.out.println("stringCellValue = " + stringCellValue);
+
+        final CellType cellType1 = sheet.getRow(1).getCell(4).getCellType();
+        System.out.println("cellType1 = " + cellType1);
+
+        final double numericCellValue = sheet.getRow(1).getCell(4).getNumericCellValue();
+        System.out.println("numericCellValue = " + numericCellValue);
+
 
     }
 }
