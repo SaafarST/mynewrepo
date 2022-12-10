@@ -1,9 +1,6 @@
 package Class10;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
@@ -32,6 +29,13 @@ public class _01_ExcelIntro {
 
         Cell cell3 = sheet.getRow(2).getCell(2);
         System.out.println("cell3 = " + cell3);
+
+        final Cell cell4 = sheet.getRow(0).getCell(2);
+        System.out.println("cell4 = " + cell4);
+
+        final CellType cellType = sheet.getRow(0).getCell(2).getCellType();
+        System.out.println("cellType = " + cellType);
+
 
     }
 }
