@@ -24,7 +24,16 @@ public class _02_ReadDormExcel {
         final CellType r3c4_celltype = r3c4_TitleforMike.getCellType();
         System.out.println("r3c4_TitleforMike = " + r3c4_TitleforMike+" DataType "+r3c4_celltype);
 
-        
+        //Getting rows and columns
+        final int rows = sheet1.getPhysicalNumberOfRows();//get rows number
+        final int cols = sheet1.getRow(0).getPhysicalNumberOfCells();//get cell numbers
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sheet1.getRow(i).getCell(j)+" ");
+            }
+            System.out.println("\n ******* ");
+        }
 
     }
 }
