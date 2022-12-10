@@ -45,6 +45,10 @@ public class _01_ExcelIntro {
         final double numericCellValue = sheet.getRow(1).getCell(4).getNumericCellValue();
         System.out.println("numericCellValue = " + numericCellValue);
 
+        final int physicalNumberOfRows = sheet.getPhysicalNumberOfRows();
+        System.out.println("physicalNumberOfRows = " + physicalNumberOfRows);
 
+        final short lastCellNum = sheet.getRow(0).getLastCellNum();
+        System.out.println("lastCellNum = " + lastCellNum);
     }
 }
