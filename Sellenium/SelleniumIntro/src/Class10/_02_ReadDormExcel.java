@@ -35,5 +35,7 @@ public class _02_ReadDormExcel {
             System.out.println("");
         }
 
+        //System.out.println(sheet1.getRow(1).getCell(5).getCellType());
+
     }
 }
