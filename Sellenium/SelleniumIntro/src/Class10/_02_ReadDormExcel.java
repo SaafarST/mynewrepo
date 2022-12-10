@@ -1,8 +1,6 @@
 package Class10;
 
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
@@ -19,8 +17,14 @@ public class _02_ReadDormExcel {
         Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet1 = workbook.getSheet("Sheet1");
         final Row headerRow = sheet1.getRow(0);
-        
+        final Cell r0c5_Salary = headerRow.getCell(5);
+        System.out.println("r0c5_Salary = " + r0c5_Salary);
 
+        final Cell r3c4_TitleforMike = sheet1.getRow(3).getCell(4);
+        final CellType r3c4_celltype = r3c4_TitleforMike.getCellType();
+        System.out.println("r3c4_TitleforMike = " + r3c4_TitleforMike+" DataType "+r3c4_celltype);
+
+        
 
     }
 }
