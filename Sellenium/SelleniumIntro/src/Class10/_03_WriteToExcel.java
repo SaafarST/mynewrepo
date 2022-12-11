@@ -19,6 +19,17 @@ public class _03_WriteToExcel {
         sheet1.getRow(2).createCell(6).setCellValue("Entry-Level");
         sheet1.getRow(3).createCell(6).setCellValue("Senior-Level");
 
+
+        //Task: Write your name and salary
+        sheet1.createRow(4).createCell(0).setCellValue("Tju");
+        sheet1.getRow(4).createCell(4).setCellValue("SDET");
+        sheet1.getRow(4).createCell(5).setCellValue(130_000);
+
+        //Create a new Sheet
+
+        Sheet sheet5 = workbook.createSheet("Sheet5");
+
+
         FileOutputStream fos = new FileOutputStream(filepath);
         workbook.write(fos);
 
