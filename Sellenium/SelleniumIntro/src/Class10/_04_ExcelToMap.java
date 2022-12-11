@@ -15,7 +15,13 @@ public class _04_ExcelToMap {
 
         Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet1 = workbook.getSheet("Sheet1");
-        
+
+        int rows = sheet1.getPhysicalNumberOfRows();
+        System.out.println("rows = " + rows);
+        int columns = sheet1.getRow(0).getPhysicalNumberOfCells();
+        System.out.println("columns = " + columns);
+
+
 
     }
 }
