@@ -10,7 +10,7 @@ import static utils.BaseClass.*;
 
 
 public class DropdownDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         setUp();
 
@@ -27,6 +27,12 @@ public class DropdownDemo {
 
         List<WebElement> countriesList = select.getOptions();
         System.out.println("Total number pf countries = " + countriesList);
+
+        for (WebElement country:countriesList){
+            country.click();
+            Thread.sleep(30);
+        }
+
 
         tearDown();
     }
