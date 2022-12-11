@@ -18,7 +18,7 @@ public class _04_ExcelToMap {
 
         int rows = sheet1.getPhysicalNumberOfRows();
         System.out.println("rows = " + rows);
-        int columns = sheet1.getRow(0).getPhysicalNumberOfCells();
+        int columns = sheet1.getRow(0).getLastCellNum();
         System.out.println("columns = " + columns);
 
 
