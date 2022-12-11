@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.management.ManagementPermission;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class _04_ExcelToMap {
@@ -22,7 +23,7 @@ public class _04_ExcelToMap {
         int rows = sheet1.getPhysicalNumberOfRows();//<---Rows number
         int columns = sheet1.getRow(0).getLastCellNum();//<---Columns number
 
-        Map<String,String> map = new HashMap<>();
+        Map<String,String> map = new LinkedHashMap<>();
         for (int r = 1; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
                  String key = sheet1.getRow(0).getCell(c).toString();
