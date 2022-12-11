@@ -23,11 +23,13 @@ public class _04_ExcelToMap {
         int columns = sheet1.getRow(0).getLastCellNum();//<---Columns number
 
         Map<String,String> map = new HashMap<>();
-        for (int r = 0; r < rows; r++) {
+        for (int r = 1; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
-                System.out.print(sheet1.getRow(r).getCell(c)+" ");
+                 String key = sheet1.getRow(0).getCell(c).toString();
+                 String value = sheet1.getRow(r).getCell(c).toString();
+                 map.put(key, value);
             }
-            System.out.println("");
+            
         }
 
 
