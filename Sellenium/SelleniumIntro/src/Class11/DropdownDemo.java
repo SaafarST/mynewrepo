@@ -14,7 +14,7 @@ public class DropdownDemo {
         List<WebElement> countries = driver.findElements(By.cssSelector("select[name=country] option"));
         for (WebElement country:countries)
         {
-            System.out.println("country = " + country);
+            System.out.println("country = " + country.getText());
         }
 
         tearDown();
