@@ -29,8 +29,10 @@ public class _04_ExcelToMap {
                  String key = sheet1.getRow(0).getCell(c).toString();
                  String value = sheet1.getRow(r).getCell(c).toString();
                  map.put(key, value);
+                System.out.println(key+": "+value);
             }
-            System.out.println(map);
+            System.out.println();
+            /*System.out.println(map);*/
         }
 
 
