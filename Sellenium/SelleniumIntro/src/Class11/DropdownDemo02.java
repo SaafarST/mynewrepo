@@ -19,8 +19,16 @@ public class DropdownDemo02 {
         WebElement countrySC = driver.findElement(By.cssSelector("select[name=country]"));
         Select select = new Select(countrySC);
 
-       
+       //1. Select by index
+        select.selectByIndex(125);
+        Thread.sleep(1000);
 
+        //2. Select by value
+        select.selectByValue("JP");
+        Thread.sleep(1000);
+
+        //3. Select by visible text
+        select.selectByVisibleText("Italy");
 
         tearDown();
     }
