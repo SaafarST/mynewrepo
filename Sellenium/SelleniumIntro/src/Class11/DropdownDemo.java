@@ -30,7 +30,9 @@ public class DropdownDemo {
 
         for (WebElement country:countriesList){
             country.click();
-            Thread.sleep(30);
+            if (country.getText().equals("Belgium"))
+            country.click();
+            break;
         }
 
 

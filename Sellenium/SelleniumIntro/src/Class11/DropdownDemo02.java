@@ -30,6 +30,14 @@ public class DropdownDemo02 {
         //3. Select by visible text
         select.selectByVisibleText("Italy");
 
+        List<WebElement> countries = select.getOptions();
+        for (int i = 0; i <countries.size(); i++) {
+            if (countries.get(i).getText().equals("Japan")){
+                countries.get(i).click();
+                break;
+            }
+        }
+
         tearDown();
     }
 }
