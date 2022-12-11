@@ -29,7 +29,7 @@ public class _04_ExcelToMap {
                  String value = sheet1.getRow(r).getCell(c).toString();
                  map.put(key, value);
             }
-            
+            System.out.println(map);
         }
 
 
