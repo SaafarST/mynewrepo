@@ -11,6 +11,7 @@ import java.lang.management.ManagementPermission;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class _04_ExcelToMap {
     public static void main(String[] args) throws IOException {
@@ -29,10 +30,14 @@ public class _04_ExcelToMap {
                  String key = sheet1.getRow(0).getCell(c).toString();
                  String value = sheet1.getRow(r).getCell(c).toString();
                  map.put(key, value);
-                System.out.println(key+": "+value);
+                //System.out.println(key+": "+value);
             }
-            System.out.println();
+           // System.out.println();
             /*System.out.println(map);*/
+            Set<Map.Entry<String,String>> entries = map.entrySet();
+            for (Map.Entry entry:entries){
+                System.out.println(entry.getKey()+": "+entry.getValue());
+            }
         }
 
 
