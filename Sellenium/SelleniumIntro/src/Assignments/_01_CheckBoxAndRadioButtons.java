@@ -11,12 +11,19 @@ public class _01_CheckBoxAndRadioButtons {
         WebElement checkboxes = driver.findElement(By.linkText("Checkboxes"));
         checkboxes.click();
 
-        WebElement checkbox1 = checkboxes.findElement(By.linkText(" checkbox 1"));
-        WebElement checkbox2 = checkboxes.findElement(By.linkText(" checkbox 2"));
+        WebElement checkbox1 = checkboxes.findElement(By.xpath("//*[@id=\"checkboxes\"]/text()[2]"));
 
-        final boolean displayed = checkbox1.isDisplayed();
+        System.out.println("checkbox1.getText() = " + checkbox1.getText());
+        
+        WebElement checkbox2 = checkboxes.findElement(By.xpath("//*[@id=\"checkboxes\"]/text()[4]"));
 
-        tearDown();
+        final boolean displayed_cb1 = checkbox1.isDisplayed();
+        final boolean selected_cb1 = checkbox1.isSelected();
+        final boolean enabled_cb1 = checkbox1.isEnabled();
+
+        System.out.println("Checkbox 1 is displayed= "+displayed_cb1+", is selected= "+selected_cb1+", is enabled= "+enabled_cb1);
+
+        //tearDown();
 
 
     }
