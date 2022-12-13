@@ -19,6 +19,10 @@ public class Dropdown_multiple {
         int totalMonths = listOfMonths.size();
         System.out.println("total of Months = " + totalMonths);
 
+        for (WebElement listOfMonth : listOfMonths) {
+            System.out.println(listOfMonth);
+        }
+
 
         tearDown();
 
