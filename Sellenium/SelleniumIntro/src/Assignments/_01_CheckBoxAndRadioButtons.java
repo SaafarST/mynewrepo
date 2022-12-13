@@ -16,10 +16,15 @@ public class _01_CheckBoxAndRadioButtons {
 
         List<WebElement> Checkboxes = driver.findElements(By.xpath("//*[@type='checkbox']"));
 
-        for (WebElement checkbox : Checkboxes) {
+        for (int i = 0; i < Checkboxes.size(); i++) {
+            System.out.println("Checkbox "+i+" is displayed ="+Checkboxes.get(i).isDisplayed() +
+                    ", is enabled = " + Checkboxes.get(i).isEnabled() + ", is selected = " + Checkboxes.get(i).isSelected());
+        }
+
+        /*for (WebElement checkbox : Checkboxes) {
             System.out.println(checkbox.getText()+" is displayed= "+checkbox.isDisplayed()+", is selected= "+checkbox.isSelected()+", is enabled= "+checkbox.isEnabled());
 
-        }
+        }*/
 
 
  /*       System.out.println("checkbox1.getText() = " + checkbox1.getText());
