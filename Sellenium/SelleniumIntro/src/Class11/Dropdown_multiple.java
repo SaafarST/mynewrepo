@@ -20,7 +20,7 @@ public class Dropdown_multiple {
         System.out.println("total of Months = " + totalMonths);
 
 
-
+        tearDown();
 
     }
 }
