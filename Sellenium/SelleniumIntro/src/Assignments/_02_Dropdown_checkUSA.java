@@ -15,10 +15,13 @@ public class _02_Dropdown_checkUSA {
 
         List<WebElement> countries = select.getOptions();
         for (WebElement country : countries) {
+            
             if(country.getText().equals("United States of America")){
-                System.out.println("Test successifully implemented");
+                System.out.println("Test successifully implemented.");
                 break;
-            }else {
+            }
+        }
+        else {
                 System.out.println("Test failed, no such country exists");
             }
 
