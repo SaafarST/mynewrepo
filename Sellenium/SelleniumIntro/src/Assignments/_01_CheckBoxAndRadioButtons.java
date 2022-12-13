@@ -17,7 +17,7 @@ public class _01_CheckBoxAndRadioButtons {
         List<WebElement> Checkboxes = driver.findElements(By.xpath("//*[@type='checkbox']"));
 
         for (int i = 0; i < Checkboxes.size(); i++) {
-            System.out.println("Checkbox "+i+" is displayed ="+Checkboxes.get(i).isDisplayed() +
+            System.out.println("Checkbox "+(i+1)+" is displayed ="+Checkboxes.get(i).isDisplayed() +
                     ", is enabled = " + Checkboxes.get(i).isEnabled() + ", is selected = " + Checkboxes.get(i).isSelected());
         }
 
