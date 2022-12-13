@@ -12,8 +12,7 @@ public class Dropdown_multiple {
 
         setUp();
 
-
-        WebElement months = driver.findElement(By.cssSelector("/html/body/div[1]/div[2]/div[1]/div/div/main/div/div[1]/div/article/div/div/div[3]/div[1]/div/div[3]/select"));
+        WebElement months = driver.findElement(By.cssSelector("//*[@name='Month']/option"));
         Select select = new Select(months);
 
         List<WebElement> listOfMonths = select.getOptions();
