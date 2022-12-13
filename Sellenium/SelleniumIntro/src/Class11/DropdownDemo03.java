@@ -16,8 +16,12 @@ public class DropdownDemo03 {
 
 
         //Select class
-        WebElement countrySC = driver.findElement(By.cssSelector("select[name=country]"));
-        
+         List<WebElement> countrySC = driver.findElements(By.cssSelector("//*[@name='country']/option"));
+        for (WebElement element : countrySC) {
+            if (element.getText().equals("Cuba"));
+            element.click();
+            break;
+        }
 
         tearDown();
     }
