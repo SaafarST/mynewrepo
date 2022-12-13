@@ -14,18 +14,17 @@ public class _02_Dropdown_checkUSA {
         Select select = new Select(countrySC);
 
         List<WebElement> countries = select.getOptions();
+        boolean status = false;
+
         for (WebElement country : countries) {
-            
             if(country.getText().equals("United States of America")){
                 System.out.println("Test successifully implemented.");
-                break;
-            }
+                status = true;
+                break;}
         }
-        else {
+        if (status == false){
                 System.out.println("Test failed, no such country exists");
             }
-
-        }
 
         tearDown();
     }
