@@ -18,7 +18,7 @@ public class _02_Dropdown_checkUSA {
 
         for (WebElement country : countries) {
             if(country.getText().equals("United States of America")){
-                System.out.println("Test successifully implemented.");
+                System.out.println("Test successfully implemented.");
                 status = true;
                 break;}
         }
