@@ -1,5 +1,54 @@
 package Class10;
 
-public class _01_ExcelIntro {
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class _01_ExcelIntro {
+    public static void main(String[] args) throws IOException {
+
+        String filepath = "C:\\Users\\Nju\\Desktop\\SD\\Excel\\Book1.xlsx";
+        FileInputStream fis = new FileInputStream(filepath);
+
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheet("A");
+        Row row = sheet.getRow(0);
+        Cell cell = row.getCell(0);
+        System.out.println("cell = " + cell);
+
+        Row row1 = sheet.getRow(1);
+        Cell cell1 = row1.getCell(3);
+        System.out.println("cell1 = " + cell1);
+
+        Row row2 = sheet.getRow(2);
+        Cell cell2 = row2.getCell(3);
+        System.out.println("cell1 = " + cell2);
+
+        Cell cell3 = sheet.getRow(2).getCell(2);
+        System.out.println("cell3 = " + cell3);
+
+        final Cell cell4 = sheet.getRow(0).getCell(2);
+        System.out.println("cell4 = " + cell4);
+
+        final CellType cellType = sheet.getRow(0).getCell(2).getCellType();
+        System.out.println("cellType = " + cellType);
+
+        final String stringCellValue = sheet.getRow(0).getCell(2).getStringCellValue();//toString()
+        System.out.println("stringCellValue = " + stringCellValue);
+
+        final CellType cellType1 = sheet.getRow(1).getCell(4).getCellType();
+        System.out.println("cellType1 = " + cellType1);
+
+        final double numericCellValue = sheet.getRow(1).getCell(4).getNumericCellValue();
+        System.out.println("numericCellValue = " + numericCellValue);
+
+        final int physicalNumberOfRows = sheet.getPhysicalNumberOfRows();
+        System.out.println("physicalNumberOfRows = " + physicalNumberOfRows);
+
+        final short lastCellNum = sheet.getRow(0).getLastCellNum();
+        System.out.println("lastCellNum = " + lastCellNum);
+    }
 }
