@@ -50,7 +50,7 @@ public class _09_DropDown_Assignment_Refactor {
         return year;
     }
 
-    void selectDay(String pickDay){
+    static String selectDay(String pickDay){
 
         WebElement DDB = driver.findElement(By.xpath("(//select[@class='day '])[1]"));
         Select selectDay = new Select(DDB);
@@ -63,11 +63,12 @@ public class _09_DropDown_Assignment_Refactor {
             }
             days.click();
             String daysText = days.getText();
-            if (daysText.equals("24")){
+            if (daysText.equals(pickDay)){
                 System.out.println(daysText);
                 break;
             }
         }
+        return pickDay;
     }
 
     public static void main(String[] args) throws InterruptedException {
