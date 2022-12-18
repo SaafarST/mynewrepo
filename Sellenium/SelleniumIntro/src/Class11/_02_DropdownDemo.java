@@ -9,7 +9,7 @@ import java.util.List;
 import static utils.BaseClass.*;
 
 
-public class DropdownDemo02 {
+public class _02_DropdownDemo {
     public static void main(String[] args) throws InterruptedException {
 
         setUp();
