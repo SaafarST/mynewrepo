@@ -13,6 +13,7 @@ public class _00_alertDemo {
         Alert simpleAlert = driver.switchTo().alert();
         simpleAlert.accept();
 
+
         tearDown();
     }
 }
