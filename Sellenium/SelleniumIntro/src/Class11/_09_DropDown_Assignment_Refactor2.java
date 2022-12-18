@@ -7,48 +7,43 @@ import java.util.List;
 
 import static utils.BaseClass.*;
 
-public class _09_DropDown_Assignment_Refactor {
+public class _09_DropDown_Assignment_Refactor2 {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        setUp();
+
+        findDate(4,"23","1985");
+
+        tearDown();
+    }
 
     /**
-     * This method gets day as String and returns the given day
+     * This method gets day (string), month(int) and year(string) and prints
+     * @param month
      * @param day
-     * @return
+     * @param year
      */
 
-    static String findDay(String day){
+     static void findDate(int month, String day, String year){
+
+
         WebElement DDB = driver.findElement(By.xpath("(//select[@class='day '])[1]"));
         Select selectDay = new Select(DDB);
         selectDay.selectByValue(day);
-        System.out.println(day);
-        return day;
-    }
 
-    /**
-     * This method gets month as int and returns the given month
-     * @param month
-     * @return
-     */
-    static int findMonth(int month)
-    {
         WebElement DMB = driver.findElement(By.xpath("(//select[@class='month '])[1]"));
         Select selectMonth = new Select(DMB);
         selectMonth.selectByIndex(month);
-        System.out.println(month);
-        return month;
-    }
 
-    /**
-     * This method gets year as String and returns the given year
-     * @param year
-     * @return
-     */
-    static String findYear(String year){
         WebElement DYB = driver.findElement(By.xpath("(//select[@class='year '])[1]"));
         Select selectYear = new Select(DYB);
         selectYear.selectByValue(year);
-        System.out.println(year);
-        return year;
+
+        System.out.println(month+"/"+day+"/"+year);
+
     }
+
 
     /**
      * This method gets a day as String, picks a day and click
@@ -76,19 +71,5 @@ public class _09_DropDown_Assignment_Refactor {
         return pickDay;
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        setUp();
 
-        findDay("25");
-
-        findMonth(4);
-
-        findYear("1985");
-
-        Thread.sleep(2000);
-
-        selectDay("23");
-
-        tearDown();
-    }
 }
