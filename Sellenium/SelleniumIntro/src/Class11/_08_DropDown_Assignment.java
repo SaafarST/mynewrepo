@@ -4,10 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 import static utils.BaseClass.*;
 
 public class _08_DropDown_Assignment {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         setUp();
 
         //1. Find the day
@@ -25,6 +27,19 @@ public class _08_DropDown_Assignment {
         Select year = new Select(DYB);
         year.selectByValue("1985");
 
+        Thread.sleep(2000);
+
+        //Loop through the day06, find specific day and click
+        List<WebElement> dayList = day.getOptions();
+        for (WebElement days : dayList) {
+            Thread.sleep(30);
+            days.click();
+            String daysText = days.getText();
+            if (daysText.equals("24")){
+                System.out.println(daysText);
+                break;
+            }
+        }
 
         tearDown();
     }
