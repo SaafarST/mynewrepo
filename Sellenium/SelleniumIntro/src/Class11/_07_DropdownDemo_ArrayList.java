@@ -38,6 +38,15 @@ public class _07_DropdownDemo_ArrayList {
         else
             System.err.println("The list does not exist, test failed.");
 
+        System.out.println("Actual list:");
+        for (String actual : actualList) {
+            System.out.println(actual);
+        }
+        System.out.println("Expected list:");
+        for (String expected : expectedList) {
+            System.out.println(expected);
+        }
+
         tearDown();
     }
 }
