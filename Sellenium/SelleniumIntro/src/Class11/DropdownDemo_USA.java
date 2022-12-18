@@ -9,33 +9,27 @@ import java.util.List;
 import static utils.BaseClass.*;
 
 
-public class DropdownDemo {
+public class DropdownDemo_USA {
     public static void main(String[] args) throws InterruptedException {
 
         setUp();
 
-     /*   //First way without using Select class
-        List<WebElement> countries = driver.findElements(By.cssSelector("select[name=country] option"));
-        for (WebElement country:countries)
-        {
-            System.out.println("country = " + country.getText());
-        }*/
-
-        //Select class
         WebElement countrySC = driver.findElement(By.cssSelector("select[name=country]"));
         Select select = new Select(countrySC);
 
         List<WebElement> countriesList = select.getOptions();
-        System.out.println("Total number pf countries = " + countriesList);
+        System.out.println("Total number pf countries = " + countriesList.size());
 
         for (WebElement country:countriesList){
             country.click();
-            if (country.getText().equals("Belgium"))
-            country.click();
-            break;
+            Thread.sleep(30);
+            if (country.getText().equals("Morocco")){
+                System.out.println("Country "+country.getText()+" is found, test successful");
+                country.click();
+                break;}
         }
 
-
+        Thread.sleep(1000);
         tearDown();
     }
 }
