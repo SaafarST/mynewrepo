@@ -37,6 +37,14 @@ public class _03_Alerts {
         System.out.println("Confirm no alert text: " + confirmAlertNoText);
         simpleAlert.dismiss();
 
+        WebElement alertPrompt = driver.findElement(By.xpath("(//*[contains(text(),'prompt')])[3]"));
+        alertPrompt.click();
+        Alert promptAlert = driver.switchTo().alert();
+        String promptAlertText = promptAlert.getText();
+        System.out.println("Prompt alert text = " + promptAlertText);
+        promptAlert.sendKeys("Hello World");
+        promptAlert.accept();
+
         tearDown();
 
     }
