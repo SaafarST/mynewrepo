@@ -48,6 +48,9 @@ public class _00_alertDemo {
         Thread.sleep(1000);
         promptAlert.accept();
 
+        String verifyText = driver.findElement(By.xpath("//div[contains(text(),'Hello')]")).getText();
+        System.out.println("verifyText = " + verifyText);
+
         tearDown();
     }
 }
