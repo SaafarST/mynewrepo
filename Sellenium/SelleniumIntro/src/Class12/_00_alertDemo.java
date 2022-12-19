@@ -39,7 +39,7 @@ public class _00_alertDemo {
 
         //Prompt Alert:
 
-        WebElement PromptAlert = driver.findElement(By.xpath("[id='prompt']"));
+        WebElement PromptAlert = driver.findElement(By.cssSelector("[id='prompt']"));
         PromptAlert.click();
         Alert promptAlert = driver.switchTo().alert();
         String promptAlertText = promptAlert.getText();
@@ -48,6 +48,6 @@ public class _00_alertDemo {
         Thread.sleep(1000);
         promptAlert.accept();
 
-        //tearDown();
+        tearDown();
     }
 }
