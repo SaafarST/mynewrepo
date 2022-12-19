@@ -21,19 +21,21 @@ public class _03_Alerts {
         simpleAlert.accept();
         Thread.sleep(2000);
 
-        WebElement alertConfirm  = driver.findElement(By.xpath("(//*[contains(text(),'example')])[2]"));
-        alertSimple.click();
+        WebElement alertConfirm  = driver.findElement(By.xpath("(//*[contains(text(),'confirm')])[4]"));
+        alertConfirm.click();
         Thread.sleep(2000);
         Alert confirmAlert = driver.switchTo().alert();
         String confirmAlertText = confirmAlert.getText();
         System.out.println("Confirm alert text: " + confirmAlertText);
-        simpleAlert.accept();
+        confirmAlert.accept();
         Thread.sleep(2000);
-        alertSimple.click();
+
+        WebElement alertConfirmNo  = driver.findElement(By.xpath("(//*[contains(text(),'confirm')])[4]"));
+        alertConfirmNo.click();
         Alert confirmAlertNo = driver.switchTo().alert();
         String confirmAlertNoText = confirmAlertNo.getText();
-        System.out.println("Confirm alert text: " + confirmAlertNoText);
-        simpleAlert.accept();
+        System.out.println("Confirm no alert text: " + confirmAlertNoText);
+        simpleAlert.dismiss();
 
         tearDown();
 
