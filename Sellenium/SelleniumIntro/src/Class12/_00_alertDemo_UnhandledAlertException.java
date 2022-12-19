@@ -21,12 +21,6 @@ public class _00_alertDemo_UnhandledAlertException {
         System.out.println("confirmAlertText = " + confirmAlertText);
         confirmAlert.accept();
 
-        Alert simpleAlert = driver.switchTo().alert();
-        String simpleAlertText = simpleAlert.getText();
-        System.out.println("simpleAlertText = " + simpleAlertText);
-        simpleAlert.accept();
-
-
         tearDown();
     }
 }
