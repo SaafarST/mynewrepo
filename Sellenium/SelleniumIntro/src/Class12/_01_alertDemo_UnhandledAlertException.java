@@ -7,7 +7,7 @@ import static utils.BaseClass.*;
 
 
 //When alert is not handled
-public class _00_alertDemo_UnhandledAlertException {
+public class _01_alertDemo_UnhandledAlertException {
     public static void main(String[] args) throws InterruptedException {
         setUp();//https://selenium08.blogspot.com/2019/07/alert-test.html
 
