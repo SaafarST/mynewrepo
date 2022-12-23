@@ -77,7 +77,7 @@ public class _09_DropDown_Assignment_Refactor {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://vitalets.github.io/combodate/");
 
         findDay("25");
 

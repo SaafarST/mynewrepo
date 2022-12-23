@@ -11,7 +11,7 @@ public class _09_DropDown_Assignment_Refactor2 {
 
     public static void main(String[] args) throws InterruptedException {
 
-        setUp();
+        setUp("https://vitalets.github.io/combodate/");
 
         findDate(4,"23","1985");
 
