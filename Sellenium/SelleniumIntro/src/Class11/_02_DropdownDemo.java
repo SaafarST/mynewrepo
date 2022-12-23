@@ -12,7 +12,7 @@ import static utils.BaseClass.*;
 public class _02_DropdownDemo {
     public static void main(String[] args) throws InterruptedException {
 
-        setUp();
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
 
 
         //Select class

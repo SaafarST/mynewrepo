@@ -12,7 +12,7 @@ import static utils.BaseClass.*;
 public class _04_DropdownDemo_Assignment {
     public static void main(String[] args) throws InterruptedException {
 
-        setUp();
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
 
         WebElement countrySC = driver.findElement(By.cssSelector("select[name=country]"));
         Select select = new Select(countrySC);
