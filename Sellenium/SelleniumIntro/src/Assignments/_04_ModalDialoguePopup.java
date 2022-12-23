@@ -8,7 +8,7 @@ import static utils.BaseClass.*;
 public class _04_ModalDialoguePopup {
     //https://discord.com/channels/1002721597834149979/1002721598396170256/1053745403264241914
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://www.selenium.dev/documentation/webdriver/interactions/alerts/");
 
         WebElement webElement = driver.findElement(By.cssSelector("[id='showLargeModal']"));
         webElement.click();

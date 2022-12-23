@@ -9,7 +9,7 @@ import static utils.BaseClass.*;
 
 public class _02_Dropdown_checkUSA {
     public static void main(String[] args) {
-        setUp();
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
         WebElement countrySC = driver.findElement(By.cssSelector("select[name=country]"));
         Select select = new Select(countrySC);
 

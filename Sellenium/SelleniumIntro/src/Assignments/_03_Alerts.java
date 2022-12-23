@@ -10,7 +10,7 @@ public class _03_Alerts {
 
     public static void main(String[] args) throws InterruptedException {
 
-        setUp();
+        setUp("https://selenium08.blogspot.com/2019/07/alert-test.html");
 
         WebElement alertSimple  = driver.findElement(By.xpath("(//*[contains(text(),'example')])[1]"));
         alertSimple.click();

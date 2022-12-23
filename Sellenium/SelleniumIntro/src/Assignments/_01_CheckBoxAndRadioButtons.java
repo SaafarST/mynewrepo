@@ -9,7 +9,7 @@ import static utils.BaseClass.*;
 
 public class _01_CheckBoxAndRadioButtons {
     public static void main(String[] args) {
-        setUp();
+        setUp("https://the-internet.herokuapp.com");
         //WebElement checkbox = driver.findElement(By.cssSelector("#content > ul > li:nth-child(6) > a"));
         WebElement checkboxes = driver.findElement(By.linkText("Checkboxes"));
         checkboxes.click();
