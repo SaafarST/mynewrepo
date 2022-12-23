@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import static utils.BaseClass.*;
 public class _00_alertDemo {
     public static void main(String[] args) throws InterruptedException {
-        //Website used: https://selenium08.blogspot.com/2019/07/alert-test.html
-        setUp();
+        //Website used:
+        setUp("https://selenium08.blogspot.com/2019/07/alert-test.html");
 
         //Simple Alert
         WebElement SimpleAlert = driver.findElement(By.cssSelector("[id='simple']"));
