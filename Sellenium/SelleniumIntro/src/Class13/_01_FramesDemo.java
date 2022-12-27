@@ -7,7 +7,7 @@ public class _01_FramesDemo {
         setUp("uitestpractice.com/Students/Switchto");
 
 
-
+        tearDown();
     }
 
 }
