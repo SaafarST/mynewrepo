@@ -10,6 +10,7 @@ public class _01_FramesDemo {
     public static void main(String[] args) throws InterruptedException {
         setUp("http://www.uitestpractice.com/");
         driver.findElement(By.xpath("//*[contains(text(),'Switch to')]")).click();
+
         String text = driver.findElement(By.xpath("//p[contains(text(),'Testing')]")).getText();
         System.out.println("text = " + text);
 
