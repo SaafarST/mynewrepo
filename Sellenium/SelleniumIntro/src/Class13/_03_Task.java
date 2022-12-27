@@ -12,7 +12,7 @@ public class _03_Task {
     public static void main(String[] args) throws InterruptedException {
         setUp("http://ui.vision/demo/webtest/frames/");
         WebDriver frame_5 = driver.switchTo().frame(driver.findElement(By.cssSelector("frame[src='frame_5.html']")));
-        String textForTheLink = frame_5.findElement(By.tagName("a")).getText();
+        String textForTheLink = frame_5.findElement(By.tagName("a")).getText();//or by linked text:https://a9t9.com
         System.out.println("Text For The Link = " + textForTheLink);
         frame_5.findElement(By.tagName("a")).click();
 
