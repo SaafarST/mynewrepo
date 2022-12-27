@@ -1,6 +1,7 @@
 package Class13;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static utils.BaseClass.*;
@@ -31,10 +32,14 @@ public class _01_FramesDemo {
         textBox.clear();
         textBox.sendKeys("Hi");
         Thread.sleep(2000);
+        driver.switchTo().defaultContent();
 
-        //3.
-
-
+        //3.By Frame Web Element
+        WebElement frame = driver.findElement(By.cssSelector("iframe[src='/Demo.html']"));
+        driver.switchTo().frame(frame);
+        textBox.clear();
+        textBox.sendKeys("Frame By WebElement");
+        Thread.sleep(2000);
 
 
         tearDown();
