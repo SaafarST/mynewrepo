@@ -24,11 +24,16 @@ public class _01_FramesDemo {
         driver.switchTo().defaultContent();
         String text1 = driver.findElement(By.xpath("//p[contains(text(),'Testing')]")).getText();
         System.out.println("text = " + text1);
+        Thread.sleep(2000);
 
         //2. By ID or Name:
         driver.switchTo().frame("iframe_a");
         textBox.clear();
         textBox.sendKeys("Hi");
+        Thread.sleep(2000);
+
+        //3.
+
 
 
 
