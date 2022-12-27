@@ -1,6 +1,7 @@
 package Class13;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import static utils.BaseClass.*;
 
@@ -12,9 +13,14 @@ public class _01_FramesDemo {
         System.out.println("text = " + text);
 
         driver.switchTo().frame(0);
-        driver.findElement(By.id("name")).sendKeys("Sdet");
+        WebElement textBox = driver.findElement(By.id("name"));
+        textBox.sendKeys("Sdet");
 
         Thread.sleep(1000);
+        textBox.clear();
+        textBox.sendKeys("QA Engineer");
+
+
 
         tearDown();
     }
