@@ -22,9 +22,6 @@ public class _01_WindowHandleDemo {
         System.out.println("windowHandle = " + windowHandle);
 
         driver.findElement(By.linkText("Click Here")).click();
-        driver.findElement(By.linkText("Click Here")).click();
-        driver.findElement(By.linkText("Click Here")).click();
-        driver.findElement(By.linkText("Click Here")).click();
         
         String WindowTitle = driver.getTitle();
         System.out.println("Window Title = " + WindowTitle);
