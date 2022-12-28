@@ -14,11 +14,29 @@ public class _02_WindowHandle {
         String parentWindow = driver.getWindowHandle();
         System.out.println("Parent Window = " + parentWindow);
 
-        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and swotch focus to it
+        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
         driver.get("https://about.google/");
 
+        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
+        driver.get("https://store.google.com");
 
-        tearDown();
+        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
+        driver.get("https://vk.com");
+
+        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
+        driver.get("https://ok.ru");
+
+        Set<String> allWindows = driver.getWindowHandles();
+        System.out.println("Total tabs open: "+allWindows.size());
+
+        Iterator<String> iterator = allWindows.iterator();
+        while (iterator.hasNext()){
+            String nextWindow = iterator.next();
+            System.out.println(nextWindow);
+        }
+
+
+        //tearDown();
 
     }
 }
