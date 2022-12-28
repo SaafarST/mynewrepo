@@ -13,6 +13,12 @@ public class _04_NestedFrames {
 
         System.out.println("Form Title = " + formTitleText);
 
+        //Switch to frame 4:
+
+        driver.switchTo().defaultContent();
+        WebDriver frame_2 = driver.switchTo().frame(driver.findElement(By.cssSelector("frame[src='frame_4.html']")));
+        frame_2.findElement(By.name("mytext4")).sendKeys("Frame Four");
+
         tearDown();
     }
 }
