@@ -10,7 +10,6 @@ public class _04_UploadFiles {
         setUp("https://the-internet.herokuapp.com/upload");
 
 
-
         Thread.sleep(1000);
 
         tearDown();
