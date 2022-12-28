@@ -22,14 +22,17 @@ public class _01_WindowHandleDemo {
         System.out.println("windowHandle = " + windowHandle);
 
         driver.findElement(By.linkText("Click Here")).click();
+        driver.findElement(By.linkText("Click Here")).click();
+        driver.findElement(By.linkText("Click Here")).click();
+        driver.findElement(By.linkText("Click Here")).click();
         
         String WindowTitle = driver.getTitle();
         System.out.println("Window Title = " + WindowTitle);
 
-        Set<String> windowHandles = driver.getWindowHandles();
-        System.out.println("windowHandles = " + windowHandles);
-        int allOpenWindows = windowHandles.size();
-        System.out.println("All tabs currentky open = " + allOpenWindows);
+        Set<String> allWindows = driver.getWindowHandles();
+        allWindows.forEach(System.out::println);
+        int allOpenWindows = allWindows.size();
+        System.out.println("All tabs currently open = " + allOpenWindows);
 
         //driver.switchTo().window(windowHandles.)
 
