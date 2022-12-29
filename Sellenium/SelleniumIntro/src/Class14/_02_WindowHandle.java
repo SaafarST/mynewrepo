@@ -47,8 +47,7 @@ public class _02_WindowHandle {
             }
         }
 
-
-        tearDown();
+        //tearDown();
 
     }
 }
