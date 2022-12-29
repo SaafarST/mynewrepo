@@ -16,7 +16,6 @@ public class _01_NavigationCommands {
         Thread.sleep(2000);
         webDriver.navigate().forward();
         Thread.sleep(2000);
-
         webDriver.quit();
         webDriver.close();
 
