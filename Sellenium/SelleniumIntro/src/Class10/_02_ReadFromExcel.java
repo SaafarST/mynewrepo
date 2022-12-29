@@ -35,6 +35,5 @@ public class _02_ReadFromExcel {
         }
 
         //System.out.println(sheet1.getRow(1).getCell(5).getCellType());
-
     }
 }
