@@ -20,8 +20,6 @@ public class _02_WindowHandle {
         driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
         driver.get("https://store.google.com");
 
-        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
-        driver.get("https://vk.com");
 
         driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
         driver.get("https://ok.ru");
@@ -33,6 +31,8 @@ public class _02_WindowHandle {
         while (iterator.hasNext()){
             String nextWindow = iterator.next();
             System.out.println(nextWindow);
+            driver.switchTo().window(nextWindow);
+            System.out.println(driver.getTitle());
         }
 
 
