@@ -24,10 +24,8 @@ public class _01_CheckBoxAndRadioButtons {
         /*for (WebElement checkbox : Checkboxes) {
             System.out.println(checkbox.getText()+" is displayed= "+checkbox.isDisplayed()+", is selected= "+checkbox.isSelected()+", is enabled= "+checkbox.isEnabled());
 
-        }*/
-
-
- /*       System.out.println("checkbox1.getText() = " + checkbox1.getText());
+        }
+        System.out.println("checkbox1.getText() = " + checkbox1.getText());
 
         WebElement checkbox2 = checkboxes.findElement(By.xpath("//*[@id=\"checkboxes\"]/text()[4]"));
 
