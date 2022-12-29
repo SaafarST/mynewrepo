@@ -27,12 +27,13 @@ public class _02_WindowHandle {
         Set<String> allWindows = driver.getWindowHandles();
         System.out.println("Total tabs open: "+allWindows.size());
 
+        int count = 1;
         Iterator<String> iterator = allWindows.iterator();
         while (iterator.hasNext()){
             String nextWindow = iterator.next();
-            System.out.println(nextWindow);
+            //System.out.println(nextWindow);
             driver.switchTo().window(nextWindow);
-            System.out.println(driver.getTitle());
+            System.out.println("Page"+count+" title:"+driver.getTitle());
         }
 
 
