@@ -23,7 +23,7 @@ public class _03_WindowHandle {
             Thread.sleep(1000);
         }
 
-//        Set<String> allWindows = driver.getWindowHandles();
+        Set<String> allWindows = driver.getWindowHandles();
 //        for (String Window : allWindows) {
 //            driver.switchTo().window(Window);
 //            driver.get("https://google.com");
