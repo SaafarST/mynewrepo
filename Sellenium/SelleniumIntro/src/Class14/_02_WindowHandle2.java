@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import static jdk.internal.org.jline.utils.Colors.s;
+
 import static utils.BaseClass.*;
 
 public class _02_WindowHandle2 {
@@ -26,6 +26,7 @@ public class _02_WindowHandle2 {
 
         Set<String> allWindows = driver.getWindowHandles();
         allWindows.forEach(System.out::println);
+        switchToWindow(allWindows,"Ok");
 
         List<String> windowList = new ArrayList<>(allWindows);
 
@@ -46,6 +47,5 @@ public class _02_WindowHandle2 {
                 System.out.println("Test is failed");
             }
         }
-
     }
 }
