@@ -1,10 +1,4 @@
 package Class14;
-import org.openqa.selenium.WindowType;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 import static utils.BaseClass.*;
 
