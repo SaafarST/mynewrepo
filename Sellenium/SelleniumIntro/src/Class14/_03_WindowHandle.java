@@ -14,8 +14,10 @@ public class _03_WindowHandle {
         String parentWindow = driver.getWindowHandle();
         System.out.println("Parent Window = " + parentWindow);
 
-        WebElement tabButton = driver.findElement(By.id("tabButton"));
-        tabButton.click();
+        for (int i = 0; i <3; i++) {
+            driver.findElement(By.id("tabButton"));
+            Thread.sleep(1000);
+        }
 
 
 
