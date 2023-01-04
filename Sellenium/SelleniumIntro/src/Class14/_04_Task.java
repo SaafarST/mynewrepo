@@ -18,9 +18,10 @@ public class _04_Task {
 
         for (int i = 0; i < 3; i++) {
             driver.findElement(By.xpath("//*[contains(text(),'Click Here')]")).click();
-
         }
+
         Set<String> allWindows = driver.getWindowHandles();
+
         for (String allWindow : allWindows) {
             driver.switchTo().window(allWindow);
             String title = driver.getTitle();
