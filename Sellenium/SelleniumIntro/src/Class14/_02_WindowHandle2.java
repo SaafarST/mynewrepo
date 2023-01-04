@@ -1,11 +1,10 @@
 package Class14;
+
 import org.openqa.selenium.WindowType;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 
 import static utils.BaseClass.*;
 
@@ -16,9 +15,6 @@ public class _02_WindowHandle2 {
         System.out.println("Parent Window = " + parentWindow);
 
         driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
-        driver.get("https://about.google/");
-
-        driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
         driver.get("https://store.google.com");
 
         driver.switchTo().newWindow(WindowType.TAB);//opens new BLANK tab and switch focus to it
@@ -26,11 +22,9 @@ public class _02_WindowHandle2 {
 
         Set<String> allWindows = driver.getWindowHandles();
         allWindows.forEach(System.out::println);
-        switchToWindow(allWindows,"Ok");
+        switchToWindow(allWindows,"OK");
 
         List<String> windowList = new ArrayList<>(allWindows);
-
-
 
         tearDown();
     }
