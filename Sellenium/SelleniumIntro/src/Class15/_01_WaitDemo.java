@@ -3,12 +3,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static utils.BaseClass.*;
 public class _01_WaitDemo {
     public static void main(String[] args) throws InterruptedException {
         setUp("https://the-internet.herokuapp.com/dynamic_loading/2");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));//This is implicit wait and dynamic
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); //This is implicit wait and dynamic
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); //This is implicit wait in Selenium 3
 
         driver.findElement(By.cssSelector("div#start button")).click(); //Locate 'Start' button element and click on it
 
