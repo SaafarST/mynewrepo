@@ -1,14 +1,12 @@
-package Class14;
+package Assignments;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import static utils.BaseClass.*;
 
-public class _04_Task {
+public class _05_WindowsHandle {
 
     public static void main(String[] args) throws InterruptedException {
         setUp("https://the-internet.herokuapp.com");
