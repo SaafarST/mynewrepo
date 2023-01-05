@@ -22,7 +22,6 @@ public class _02_TaskForImplicitWait {
         WebElement text = driver.findElement(By.className("ContactUs"));
         System.out.println("text.getText() = " + text.getText());
 
-
         tearDown();
     }
 }
