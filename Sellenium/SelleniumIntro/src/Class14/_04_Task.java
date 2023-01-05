@@ -9,6 +9,7 @@ import java.util.Set;
 import static utils.BaseClass.*;
 
 public class _04_Task {
+
     public static void main(String[] args) throws InterruptedException {
         setUp("https://the-internet.herokuapp.com");
         driver.findElement(By.xpath("//*[contains(text(),'Multiple Windows')]")).click();
@@ -28,7 +29,6 @@ public class _04_Task {
             System.out.println("title = " + title);
             driver.get("https://fb.com");
         }
-
 
         Thread.sleep(2000);
         tearDown();
