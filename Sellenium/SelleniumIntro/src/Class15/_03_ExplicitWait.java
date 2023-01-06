@@ -16,13 +16,15 @@ public class _03_ExplicitWait {
         setUp("http://www.uitestpractice.com");
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+
         try {
             driver.findElement(By.xpath("//*[contains(text(),'AjaxCall')]")).click();
             driver.findElement(By.xpath("//*[contains(text(),'This is a Ajax link')]")).click();
             wait.until(ExpectedConditions.presenceOfElementLocated((By.className("ContactUs"))));
             WebElement text = driver.findElement(By.className("ContactUs"));
             System.out.println("text.getText() = " + text.getText());
-        }catch (NoSuchElementException e){
+        }
+        catch (NoSuchElementException e){
             e.printStackTrace();
             System.out.println("Element is not found. Wait longer for the element to be visible on UI.");
         }
