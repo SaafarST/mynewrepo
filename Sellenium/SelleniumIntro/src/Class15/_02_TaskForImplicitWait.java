@@ -18,7 +18,6 @@ public class _02_TaskForImplicitWait {
 
         //Part 2:
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.manage().window().maximize();
 
         driver.findElement(By.xpath("//*[contains(text(),'AjaxCall')]")).click();
         driver.findElement(By.xpath("//*[contains(text(),'This is a Ajax link')]")).click();
