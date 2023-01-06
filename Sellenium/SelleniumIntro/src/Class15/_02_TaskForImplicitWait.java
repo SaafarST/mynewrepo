@@ -1,5 +1,6 @@
 package Class15;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -18,11 +19,15 @@ public class _02_TaskForImplicitWait {
 
         //Part 2:
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-        driver.findElement(By.xpath("//*[contains(text(),'AjaxCall')]")).click();
-        driver.findElement(By.xpath("//*[contains(text(),'This is a Ajax link')]")).click();
-        WebElement text = driver.findElement(By.className("ContactUs"));
-        System.out.println("text.getText() = " + text.getText());
+        try {
+            driver.findElement(By.xpath("//*[contains(text(),'AjaxCall')]")).click();
+            driver.findElement(By.xpath("//*[contains(text(),'This is a Ajax link')]")).click();
+            WebElement text = driver.findElement(By.className("ContactUs"));
+            System.out.println("text.getText() = " + text.getText());
+        }catch (NoSuchElementException e){
+            e.printStackTrace();
+            System.out.println("Element is not found. Wait longer for the element to be visible on UI.");
+        }
 
         tearDown();
     }
