@@ -27,6 +27,7 @@ public class BaseClass {
         }
 
         driver.get(url);
+        driver.manage().window().maximize();
         //driver.get(ConfigsReader.getProperties("url"));
     }
     public static void tearDown() {
