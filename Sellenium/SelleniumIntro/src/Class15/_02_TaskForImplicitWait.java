@@ -16,7 +16,7 @@ public class _02_TaskForImplicitWait {
         //driver.findElement(By.linkText("/Students/_P1")).click();
 
         //Part 2:
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(150));
         driver.findElement(By.xpath("//*[contains(text(),'AjaxCall')]")).click();
         driver.findElement(By.xpath("//*[contains(text(),'This is a Ajax link')]")).click();
         WebElement text = driver.findElement(By.className("ContactUs"));
