@@ -14,8 +14,6 @@ public class _03_ExplicitWait {
     public static void main(String[] args) {
 
         setUp("http://www.uitestpractice.com");
-
-
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
         try {
