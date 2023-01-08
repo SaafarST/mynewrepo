@@ -31,8 +31,6 @@ public class _04_TaskForExplicitWait {
             System.out.println("Element is mnot found, wait longer for the element to become visible.");
         }
 
-
-
         tearDown();
     }
 }
