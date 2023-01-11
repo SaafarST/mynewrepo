@@ -20,10 +20,8 @@ public class _06_FluentWait {
         fluentWait.ignoring(NoSuchElementException.class);//Do not throw given exception until max time (15 seconds)
 
         driver.findElement(By.cssSelector("button[class='dropbtn']")).click();//Locating Dropdown and click
-
+        fluentWait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Face")));
         driver.findElement(By.partialLinkText("Face")).click();//click to it
-
-
 
         tearDown();
     }
