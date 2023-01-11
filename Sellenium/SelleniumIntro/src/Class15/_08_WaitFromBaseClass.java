@@ -14,9 +14,8 @@ public class _08_WaitFromBaseClass {
         setUp("https://omayo.blogspot.com");
 
 
-        driver.findElement(By.cssSelector("button[class='dropbtn']")).click();//Locating Dropdown and click
-
-        driver.findElement(By.partialLinkText("Face")).click();//click to it
+        driver.findElement(By.cssSelector("button[class='dropbtn']")).click();/
+        driver.findElement(By.partialLinkText("Face")).click();
 
         tearDown();
     }
