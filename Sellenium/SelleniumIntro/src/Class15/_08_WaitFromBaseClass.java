@@ -14,8 +14,16 @@ public class _08_WaitFromBaseClass {
         setUp("https://omayo.blogspot.com");
 
 
-        driver.findElement(By.cssSelector("button[class='dropbtn']")).click();/
-        driver.findElement(By.partialLinkText("Face")).click();
+        driver.findElement(By.cssSelector("button[class='dropbtn']")).click();
+        try {
+            driver.findElement(By.partialLinkText("Face")).click();
+        }catch (NoSuchElementException e){
+            e.printStackTrace();
+            System.out.println("Element is not found. Please wait longer for the visibility of the element");
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Element is not found.");
+        }
 
         tearDown();
     }
