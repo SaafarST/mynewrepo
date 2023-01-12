@@ -1,7 +1,10 @@
 package utils;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Set;
 
 import static utils.BaseClass.driver;
@@ -28,6 +31,8 @@ public class CommonMethods {
     }
     public static void click(WebElement element){
         element.click();
-
+    }
+    public static void wairForElement(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 }
