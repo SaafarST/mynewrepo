@@ -1,5 +1,7 @@
 package utils;
 
+import org.openqa.selenium.WebElement;
+
 import java.util.Set;
 
 import static utils.BaseClass.driver;
@@ -19,5 +21,9 @@ public class CommonMethods {
                 break; // with 'break' included, If I search windowTitle by 'Google' only first will print, without 'break' ALL titles that contain 'Google' will print
             }
         }
+    }
+
+    public static void sendText(WebElement element, String value){
+        element.sendKeys(value);
     }
 }

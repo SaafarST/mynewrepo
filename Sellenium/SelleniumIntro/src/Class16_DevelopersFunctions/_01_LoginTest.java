@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import utils.ConfigsReader;
 
 import static utils.BaseClass.*;
-
+import static utils.CommonMethods.*;
 public class _01_LoginTest {
     public static void main(String[] args) {
         setUp("https://exelentersdet.com");
@@ -21,7 +21,5 @@ public class _01_LoginTest {
 
         tearDown();
     }
-    public static void sendText(WebElement element, String value){
-        element.sendKeys(value);
-    }
+
 }
