@@ -26,4 +26,8 @@ public class CommonMethods {
     public static void sendText(WebElement element, String value){
         element.sendKeys(value);
     }
+    public static void click(WebElement element){
+        element.click();
+
+    }
 }

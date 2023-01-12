@@ -9,6 +9,8 @@ public class _01_LoginTest {
         setUp("https://exelentersdet.com");
 
         WebElement username = driver.findElement(By.id("txtUsername"));
+        WebElement password = driver.findElement(By.id("txtPassword"));
+        WebElement loginBtn = driver.findElement(By.id("btnLogin"));
 
         //This is without function:
        // username.sendKeys("Admin");
@@ -16,6 +18,8 @@ public class _01_LoginTest {
         //This is with function:
         //sendText(username,"Admin");
         sendText(username, ConfigsReader.getProperties("username"));
+        sendText(password, ConfigsReader.getProperties("password"));
+        click(loginBtn);
 
         tearDown();
     }
