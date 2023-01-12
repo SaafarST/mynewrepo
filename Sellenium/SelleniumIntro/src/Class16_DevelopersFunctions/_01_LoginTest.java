@@ -19,7 +19,7 @@ public class _01_LoginTest {
         //sendText(username,"Admin");
         sendText(username, ConfigsReader.getProperties("username"));
         sendText(password, ConfigsReader.getProperties("password"));
-        click(loginBtn);
+        clickButWaitForClickability(loginBtn);
 
         tearDown();
     }

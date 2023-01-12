@@ -27,18 +27,32 @@ public class CommonMethods {
         }
     }
 
+    /**
+     * This method send key as a text to given element
+     * @param element
+     * @param value
+     */
     public static void sendText(WebElement element, String value){
         element.sendKeys(value);
     }
+
+    /**
+     * This method clicks to given element
+     * @param element
+     */
     public static void click(WebElement element){
         element.click();
     }
+
     public static WebDriverWait waitForElement(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.ExPLICIT_WAIT_TIME));
         return wait;
     }
     public static void waitForClickability(WebElement element){
         waitForElement().until(ExpectedConditions.elementToBeClickable(element));
+    }
+    public static void waitForVisibility(WebElement element){
+        waitForElement().until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void clickButWaitForClickability(WebElement element){
