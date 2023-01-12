@@ -2,6 +2,7 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -32,7 +33,16 @@ public class CommonMethods {
     public static void click(WebElement element){
         element.click();
     }
-    public static void wairForElement(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+    public static WebDriverWait waitForElement(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.ExPLICIT_WAIT_TIME));
+        return wait;
+    }
+    public static void waitForClickability(WebElement element){
+        waitForElement().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void clickButWaitForClickability(WebElement element){
+        waitForClickability(element);
+        element.click();
     }
 }
