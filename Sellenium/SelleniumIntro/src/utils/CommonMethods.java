@@ -5,6 +5,11 @@ import java.util.Set;
 import static utils.BaseClass.driver;
 
 public class CommonMethods {
+
+    /**
+     * Method will switch focus to next window/tab based on the window title/name
+     * @param windowTitle
+     */
     public static void switchToWindow(String windowTitle) {
         Set<String> windows = driver.getWindowHandles();
         for (String windowOrTab : windows) {
