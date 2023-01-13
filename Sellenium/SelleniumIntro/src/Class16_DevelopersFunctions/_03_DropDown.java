@@ -11,7 +11,7 @@ public class _03_DropDown {
 
         String expectedText = "June";
         List<WebElement> listOfMonths = driver.findElements(By.cssSelector("select[name='Month'] option"));
-        dropDown(listOfMonths,expectedText);
+        selectDdValue(listOfMonths,expectedText);
 
         tearDown();
     }

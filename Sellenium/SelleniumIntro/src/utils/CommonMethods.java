@@ -79,7 +79,7 @@ public class CommonMethods {
         }
     }
 
-    public static void dropDown(List<WebElement> listOfElements,String expectedElement){
+    public static void selectDdValue(List<WebElement> listOfElements,String expectedElement){
         for (WebElement element : listOfElements) {
             String actualText = element.getText();
             if (actualText.equalsIgnoreCase(expectedElement))
