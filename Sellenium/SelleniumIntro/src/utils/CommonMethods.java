@@ -78,4 +78,15 @@ public class CommonMethods {
             }
         }
     }
+
+    public static void dropDown(List<WebElement> listOfElements,String expectedElement){
+        for (WebElement element : listOfElements) {
+            String actualText = element.getText();
+            if (actualText.equalsIgnoreCase(expectedElement))
+            {
+                element.click();
+                break;
+            }
+        }
+    }
 }

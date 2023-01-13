@@ -11,15 +11,9 @@ public class _03_DropDown {
 
         String expectedText = "June";
         List<WebElement> listOfMonths = driver.findElements(By.cssSelector("select[name='Month'] option"));
-        for (WebElement month : listOfMonths) {
-            String actualText = month.getText();
-            if (actualText.equalsIgnoreCase(expectedText))
-            {
-                month.click();
-                break;
-            }
-        }
+        dropDown(listOfMonths,expectedText);
 
         tearDown();
     }
+
 }
