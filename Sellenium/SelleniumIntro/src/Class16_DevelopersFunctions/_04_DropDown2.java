@@ -22,7 +22,10 @@ public class _04_DropDown2 {
         //selectDdValue(monthsDD,expectedText);
 
         //This method is with Select class, index is used
-        selectDdValue(monthsDD,24);
+        selectDdValue(monthsDD,4);
+
+        WebElement country = driver.findElement(By.name("country"));
+        selectDdValue(country,100);
 
         tearDown();
     }
