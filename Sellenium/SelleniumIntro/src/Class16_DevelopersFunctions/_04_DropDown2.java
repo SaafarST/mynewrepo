@@ -11,9 +11,9 @@ public class _04_DropDown2 {
     public static void main(String[] args) {
         setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
 
-        String expectedText = "June";
+        String expectedText = "April";
         List<WebElement> listOfMonths = driver.findElements(By.cssSelector("select[name='Month'] option"));
-        selectDdValue(listOfMonths,expectedText);
+        //selectDdValue(listOfMonths,expectedText);
 
         WebElement monthsDD = driver.findElement(By.cssSelector("select[name='Month']"));
         Select select = new Select(monthsDD);
@@ -28,5 +28,14 @@ public class _04_DropDown2 {
 
         tearDown();
     }
-
+    public static void selectDdValue(WebElement element,String expectedElement){
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
+        for (WebElement option : options) {
+            if (option.getText().equals(expectedElement)){
+                select.selectByVisibleText(expectedElement);
+                break;
+            }
+        }
+    }
 }
