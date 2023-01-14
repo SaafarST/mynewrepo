@@ -17,10 +17,17 @@ public class _04_DropDown2 {
         //This method without Select
         //selectDdValue(listOfMonths,expectedText);
 
-        WebElement monthsDD = driver.findElement(By.cssSelector("select[name='Month']"));
         //This method is with Select class
-        selectDdValue(monthsDD,expectedText);
+        WebElement monthsDD = driver.findElement(By.cssSelector("select[name='Month']"));
+        //selectDdValue(monthsDD,expectedText);
+
+        //This method is with Select class, index is used
+        selectDdValue(monthsDD,24);
+
         tearDown();
     }
+
+
+
 
 }

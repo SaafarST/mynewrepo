@@ -101,6 +101,22 @@ public class CommonMethods {
             }
         }
     }
+    public static void selectDdValue(WebElement element,int index){
+        Select select = new Select(element);
+        List<WebElement> options = select.getOptions();
+        if (options.size()<index){
+            try {
+
+                throw new IndexOutOfBoundsException(index);
+            }catch (IndexOutOfBoundsException e){
+                e.printStackTrace();
+                System.out.printf("Your number is bigger than "+(options.size())+", please enter a number between 1 and "+(options.size()));
+            }
+
+        }else {
+            select.selectByIndex(index);
+        }
+    }
 
 
 }
