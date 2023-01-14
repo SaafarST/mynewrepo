@@ -13,12 +13,13 @@ public class _04_DropDown2 {
 
         String expectedText = "April";
         List<WebElement> listOfMonths = driver.findElements(By.cssSelector("select[name='Month'] option"));
+
+        //This method without Select
         //selectDdValue(listOfMonths,expectedText);
 
         WebElement monthsDD = driver.findElement(By.cssSelector("select[name='Month']"));
-
+        //This method is with Select class
         selectDdValue(monthsDD,expectedText);
-
         tearDown();
     }
 
