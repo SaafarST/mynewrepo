@@ -16,26 +16,10 @@ public class _04_DropDown2 {
         //selectDdValue(listOfMonths,expectedText);
 
         WebElement monthsDD = driver.findElement(By.cssSelector("select[name='Month']"));
-        Select select = new Select(monthsDD);
 
-        List<WebElement> months = select.getOptions();
-        for (WebElement month : months) {
-            if (month.getText().equals(expectedText)){
-                select.selectByVisibleText(expectedText);
-                break;
-            }
-        }
+        selectDdValue(monthsDD,expectedText);
 
         tearDown();
     }
-    public static void selectDdValue(WebElement element,String expectedElement){
-        Select select = new Select(element);
-        List<WebElement> options = select.getOptions();
-        for (WebElement option : options) {
-            if (option.getText().equals(expectedElement)){
-                select.selectByVisibleText(expectedElement);
-                break;
-            }
-        }
-    }
+
 }
