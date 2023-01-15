@@ -70,6 +70,12 @@ public class CommonMethods {
         element.click();
     }
 
+    /**
+     * Method selects radio button or checkbox is enabled and is not already selected, then clicks on it.
+     *
+     * @param radioOrCheckbox List of WebElements for dropdown or radio buttons
+     * @param expectedValue   String
+     */
     public static void clickRadioOrCheckbox(List<WebElement> radioOrCheckbox, String expectedValue){
         for (WebElement element : radioOrCheckbox) {
             String actualValue = element.getAttribute("value");
@@ -80,6 +86,12 @@ public class CommonMethods {
         }
     }
 
+    /**
+     * Method selects from dropdown or multi-select by text value.
+     *
+     * @param listOfElements  list of WebElement
+     * @param expectedElement String
+     */
     public static void selectDdValue(List<WebElement> listOfElements,String expectedElement){
         for (WebElement element : listOfElements) {
             String actualText = element.getText();
@@ -91,6 +103,12 @@ public class CommonMethods {
         }
     }
 
+    /**
+     * Method selects from a dropdown by visible text.
+     *
+     * @param element       WebElement
+     * @param expectedElement String
+     */
     public static void selectDdValue(WebElement element,String expectedElement){
         Select select = new Select(element);
         List<WebElement> options = select.getOptions();
@@ -101,6 +119,13 @@ public class CommonMethods {
             }
         }
     }
+
+    /**
+     * Method will select a dropdown or multi-select by index.
+     *
+     * @param element WebElement
+     * @param index   int
+     */
     public static void selectDdValue(WebElement element,int index){
         Select select = new Select(element);
         List<WebElement> options = select.getOptions();
