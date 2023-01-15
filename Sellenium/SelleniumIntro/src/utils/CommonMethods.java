@@ -79,10 +79,16 @@ public class CommonMethods {
     public static void clickRadioOrCheckbox(List<WebElement> radioOrCheckbox, String expectedValue){
         for (WebElement element : radioOrCheckbox) {
             String actualValue = element.getAttribute("value");
-            if (expectedValue.equalsIgnoreCase(actualValue)){
+            if (element.isEnabled() && !element.isSelected() && expectedValue.equalsIgnoreCase(actualValue)){
                 element.click();
                 break;
             }
+        }
+    }
+
+    public static void clickRadioOrCheckbox(WebElement radioOrCheckbox){
+        if (radioOrCheckbox.isEnabled() && !radioOrCheckbox.isSelected()){
+            radioOrCheckbox.click();
         }
     }
 
