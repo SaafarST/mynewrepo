@@ -1,6 +1,7 @@
 package utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -172,5 +173,15 @@ public class CommonMethods {
 
     public static void sendAlertText(String text){
         driver.switchTo().alert().sendKeys(text);
+    }
+
+    public static String getAlertText(){
+        String alertText = null;
+        try {
+            alertText = driver.switchTo().alert().getText();
+        }catch (NoAlertPresentException e){
+            e.printStackTrace();
+        }
+       return alertText;
     }
 }

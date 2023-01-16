@@ -11,14 +11,17 @@ public class _07_AlertTest {
         setUp("https://selenium08.blogspot.com/2019/07/alert-test.html");
 
         driver.findElement(By.id("simple")).click();
+        System.out.println(getAlertText());
         acceptAlert();
         waitInSeconds(2);
 
         driver.findElement(By.id("confirm")).click();
+        System.out.println(getAlertText());
         dismissAlert();
         waitInSeconds(2);
 
         driver.findElement(By.id("prompt")).click();
+        System.out.println(getAlertText());
         sendAlertText("Tjuu");
         waitInSeconds(1);
         acceptAlert();
