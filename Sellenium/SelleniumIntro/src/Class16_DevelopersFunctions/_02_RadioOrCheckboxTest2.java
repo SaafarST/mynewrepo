@@ -16,9 +16,9 @@ public class _02_RadioOrCheckboxTest2 {
         clickRadioOrCheckbox(noRadioBtn);
 
         WebElement yesRadioBtn = driver.findElement(By.id("yesRadio"));
-        yesRadioBtn.click();
-        //clickRadioOrCheckbox(yesRadioBtn);
-        //clickButWaitForClickability(yesRadioBtn);
+        //yesRadioBtn.click();
+        clickRadioOrCheckbox(yesRadioBtn);
+        clickButWaitForClickability(yesRadioBtn);
 
 
         tearDown();

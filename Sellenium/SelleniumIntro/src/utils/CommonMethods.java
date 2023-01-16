@@ -149,5 +149,11 @@ public class CommonMethods {
         }
     }
 
+    public static void acceptAlert(){
+        driver.switchTo().alert().accept();
+    }
 
+    public static void dismissAlert(){
+        driver.switchTo().alert().dismiss();
+    }
 }
