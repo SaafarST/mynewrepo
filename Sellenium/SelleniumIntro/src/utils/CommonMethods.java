@@ -156,4 +156,12 @@ public class CommonMethods {
     public static void dismissAlert(){
         driver.switchTo().alert().dismiss();
     }
+
+    public static void waitInSeconds(int second){
+        try {
+            Thread.sleep(second*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
