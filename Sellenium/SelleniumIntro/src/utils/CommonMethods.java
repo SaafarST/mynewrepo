@@ -157,11 +157,20 @@ public class CommonMethods {
         driver.switchTo().alert().dismiss();
     }
 
+    /**
+     * Method will wait for an element, but this is a static wait, please use with caution.
+     *
+     * @param second int
+     */
     public static void waitInSeconds(int second){
         try {
             Thread.sleep(second*1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void sendAlertText(String text){
+        driver.switchTo().alert().sendKeys(text);
     }
 }

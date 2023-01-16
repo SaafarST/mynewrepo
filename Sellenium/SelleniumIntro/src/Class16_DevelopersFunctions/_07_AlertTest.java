@@ -12,6 +12,17 @@ public class _07_AlertTest {
 
         driver.findElement(By.id("simple")).click();
         acceptAlert();
+        waitInSeconds(2);
+
+        driver.findElement(By.id("confirm")).click();
+        dismissAlert();
+        waitInSeconds(2);
+
+        driver.findElement(By.id("prompt")).click();
+        sendAlertText("Tjuu");
+        waitInSeconds(1);
+        acceptAlert();
+        waitInSeconds(1);
 
         tearDown();
     }
