@@ -151,7 +151,13 @@ public class CommonMethods {
     }
 
     public static void acceptAlert(){
-        driver.switchTo().alert().accept();
+        try {
+            driver.switchTo().alert().accept();
+        }catch (NoAlertPresentException e){
+            e.printStackTrace();
+            System.out.println("Alert is not present!");
+        }
+
     }
 
     public static void dismissAlert(){

@@ -27,7 +27,7 @@ public class _07_AlertTest {
         acceptAlert();
         waitInSeconds(1);
 
-        tearDown();
+        //tearDown();
     }
 
 
