@@ -40,8 +40,8 @@ public class _00_Recap_WaitType {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
         button.click();
         System.out.println(driver.findElement(By.id("message")).getText());
-
         waitInSeconds(2);
+
         tearDown();
     }
 }
