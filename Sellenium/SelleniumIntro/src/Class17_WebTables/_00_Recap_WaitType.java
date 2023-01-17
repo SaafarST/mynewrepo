@@ -33,8 +33,15 @@ public class _00_Recap_WaitType {
         System.out.println(text);
         System.out.println(button.getText());
 
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message")));     // this is for Explicit wait only, comment it out when using Implicit wait
+        String message = driver.findElement(By.id("message")).getText();
+        System.out.println("message: " + message);
 
-        waitInSeconds(1);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+        button.click();
+        System.out.println(driver.findElement(By.id("message")).getText());
+
+        waitInSeconds(2);
         tearDown();
     }
 }
