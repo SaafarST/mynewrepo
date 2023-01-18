@@ -34,7 +34,7 @@ public class _01_TablesDemo {
         List<WebElement> columns = driver.findElements(By.xpath("//table[@id='table1']//th"));
         System.out.println("number of columns" + columns.size());
         for (WebElement column : columns) {
-            System.out.println(column.getText());
+            System.out.println(column.getText()+" ");
         }
 
         tearDown();
