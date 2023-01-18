@@ -11,6 +11,8 @@ public class _01_TablesDemo {
         setUp("https://the-internet.herokuapp.com/tables");
 
         List<WebElement> rows = driver.findElements(By.cssSelector("table#table1 tbody tr"));
+        int rowSize = rows.size();
+        System.out.println("Row size is = " + rowSize);
 
         tearDown();
     }
