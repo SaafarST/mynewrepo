@@ -7,7 +7,7 @@ import java.util.List;
 
 import static utils.BaseClass.*;
 
-public class _01_TablesDemo {
+public class _01_WebablesDemo {
     public static void main(String[] args) {
         setUp("https://the-internet.herokuapp.com/tables");
 
