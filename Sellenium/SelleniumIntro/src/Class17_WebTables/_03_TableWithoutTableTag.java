@@ -29,6 +29,6 @@ public class _03_TableWithoutTableTag {
         System.out.println("\nNumber of rows: " + totalRows);
 
 
-        //tearDown();
+        tearDown();
     }
 }
