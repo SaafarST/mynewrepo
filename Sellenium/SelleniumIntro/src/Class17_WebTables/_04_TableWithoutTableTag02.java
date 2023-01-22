@@ -41,7 +41,8 @@ public class _04_TableWithoutTableTag02 {
 
         driver.findElement(By.cssSelector("#submit")).click();
 
-        for (WebElement row : rows) {
+        List<WebElement> rows1 = driver.findElements(By.cssSelector("div.rt-tr-group"));
+        for (WebElement row : rows1) {
             if (!row.getText().isBlank() && !row.getText().isEmpty())
             {
                 System.out.print(row.getText());

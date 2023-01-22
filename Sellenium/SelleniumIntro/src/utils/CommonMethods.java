@@ -138,7 +138,6 @@ public class CommonMethods {
         List<WebElement> options = select.getOptions();
         if (options.size()<index){
             try {
-
                 throw new IndexOutOfBoundsException(index);
             }catch (IndexOutOfBoundsException e){
                 e.printStackTrace();
