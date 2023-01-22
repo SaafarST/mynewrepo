@@ -22,13 +22,31 @@ public class _04_TableWithoutTableTag02 {
         int rowSize = rows.size();
         System.out.println(rowSize);
 
+
+
+        WebElement addBtn = driver.findElement(By.cssSelector("button#addNewRecordButton"));
+        addBtn.click();
+        waitInSeconds(1);
+
+        WebElement name = driver.findElement(By.cssSelector("#firstName"));
+        name.sendKeys("Tju");
+        WebElement lastName = driver.findElement(By.cssSelector("#lastName"));
+        lastName.sendKeys("Cure");
+        driver.findElement(By.cssSelector("#userEmail")).sendKeys("123@gmail.com");
+        driver.findElement(By.cssSelector("#age")).sendKeys("32");
+        driver.findElement(By.cssSelector("#salary")).sendKeys("30000");
+
+        WebElement department = driver.findElement(By.cssSelector("#department"));
+        department.sendKeys("tender");
+
+        driver.findElement(By.cssSelector("#submit")).click();
+
         for (WebElement row : rows) {
             if (!row.getText().isBlank() && !row.getText().isEmpty())
             {
                 System.out.print(row.getText());
             }
         }
-
 
         tearDown();
     }
