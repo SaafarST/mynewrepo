@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class BaseClass extends CommonMethods{
+public class BaseClass extends utils.CommonMethods{
 
     public static WebDriver driver;
 
