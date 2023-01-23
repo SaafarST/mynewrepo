@@ -52,8 +52,6 @@ public static void main(String[] args) {
     boolean status = false;
     int maxNumberOfNextPage = 0;
 
-
-
     while (status == false && maxNumberOfNextPage < 5) {
 
         List<WebElement> selectElements = driver.findElements(By.cssSelector("tbody tr td:nth-child(1)"));//Get all select elements
