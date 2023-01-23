@@ -35,13 +35,13 @@ public static void main(String[] args) {
     sendText(driver.findElement(By.id("middleName")), "Voltaire"); //set middle name to Voltaire
     sendText(driver.findElement(By.id("lastName")), "Bell"); //set  surname to Bell
 
-    String employeeID = driver.findElement(By.id("employeeId")).getAttribute("value");//Store employeeID
+    String employeeID = getAttribute(driver.findElement(By.id("employeeId")),"value");//Store employeeID
     System.out.println("Employee ID " + employeeID);
 
-    driver.findElement(By.id("btnSave")).click();//Click Save btn to add employee
+    WebElement saveBtn = driver.findElement(By.id("btnSave"));
+    click(saveBtn);//Click Save btn to add employee
 
-    //driver.findElement(By.id("menu_pim_viewPimModule")).click();
-    driver.findElement(By.id("menu_pim_viewEmployeeList")).click();//navigate to employee list again
+    click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list again
 
     WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
 
@@ -57,10 +57,10 @@ public static void main(String[] args) {
     }
 
     WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
-    deleteBtn.click();
+    click(deleteBtn);
 
     WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
-    dialogDeleteBtn.click();//click ok!
+    click(dialogDeleteBtn);//click ok!
 
     //Re-check element if it exists in the given list of elements:
     for (int i = 0; i < listOfIDs.size(); i++) {
@@ -69,10 +69,10 @@ public static void main(String[] args) {
             break;
         }
     }
-
     tearDown();
-
 }
-
+public static WebElement getithElement( List<WebElement> list, int i){
+    return list.get(i);
+}
 
 }
