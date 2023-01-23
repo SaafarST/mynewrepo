@@ -22,20 +22,18 @@ public static void main(String[] args) {
 
     setUp("https://www.exelentersdet.com");
 
-    driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-    //driver.findElement(By.id("txtUsername")).sendKeys(System.getProperty("username"));
-    driver.findElement(By.id("txtPassword")).sendKeys("Exelent2022Sdet!");
-    //driver.findElement(By.id("txtPassword")).sendKeys(System.getProperty("password"));
-    driver.findElement(By.id("btnLogin")).click();
+    sendText(driver.findElement(By.id("txtUsername")),"Admin");
+    sendText(driver.findElement(By.id("txtPassword")),"Exelent2022Sdet!");
+    click(driver.findElement(By.id("btnLogin")));
 
-    driver.findElement(By.id("menu_pim_viewPimModule")).click();//find PIM and click on it
+    click(driver.findElement(By.id("menu_pim_viewPimModule")));//find PIM and click on it
 
     WebElement addBtn = driver.findElement(By.cssSelector("input#btnAdd"));//Find Add btn
-    addBtn.click();//click Add btn
+    click(addBtn);
 
-    driver.findElement(By.id("firstName")).sendKeys("John"); //set name to John
-    driver.findElement(By.id("middleName")).sendKeys("Voltaire"); //set middle name to Voltaire
-    driver.findElement(By.id("lastName")).sendKeys("Bell"); //set  surname to Bell
+    sendText(driver.findElement(By.id("firstName")),"John");//set name to John
+    sendText(driver.findElement(By.id("middleName")), "Voltaire"); //set middle name to Voltaire
+    sendText(driver.findElement(By.id("lastName")), "Bell"); //set  surname to Bell
 
     String employeeID = driver.findElement(By.id("employeeId")).getAttribute("value");//Store employeeID
     System.out.println("Employee ID " + employeeID);
@@ -75,5 +73,6 @@ public static void main(String[] args) {
     tearDown();
 
 }
+
 
 }
