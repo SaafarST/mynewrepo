@@ -190,7 +190,7 @@ public class CommonMethods {
        return alertText;
     }
 
-    public static String getAttribute(WebElement element, String value){
-        element.getAttribute(value);
+    public static String getAttribute(WebElement element, String attribute){
+        return element.getAttribute(attribute);
     }
 }
