@@ -1,4 +1,5 @@
 package Class18;
+import org.apache.batik.css.engine.value.css2.SrcManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +24,7 @@ public class _02_Assignment {
         sendText(driver.findElement(By.id("txtPassword")),password);
         click(driver.findElement(By.id("btnLogin")));
     }
-    public static String addNewUser(String firstName,String middleName, String lastName){
+    public static String addNewEmployee(String firstName,String middleName, String lastName){
         click(driver.findElement(By.id("menu_pim_viewPimModule")));//find PIM and click on it
         click(driver.findElement(By.cssSelector("input#btnAdd")));//Find Add btn and click);
         sendText(driver.findElement(By.id("firstName")),firstName);//set name to John
@@ -32,6 +33,24 @@ public class _02_Assignment {
         String employeeID = getEmployeeID(driver.findElement(By.id("employeeId")),"value");//Store employeeID
         click(driver.findElement(By.id("btnSave")));//Click Save btn to add employee
         return employeeID;
+    }
+    public static List<WebElement> getList(String element){
+        return driver.findElements(By.cssSelector(element));
+    }
+    public static boolean verifyEmployee(String employeeID, List<WebElement> listOfIDs){
+
+        boolean status = false;
+            for (WebElement ID : listOfIDs) {
+                if (ID.getText().equals(employeeID)) {
+                    System.out.println("An employee with ID of "+ID.getText()+" is on the list.");
+                    status = true;
+                    break;
+                }
+            }
+        if(status == false){
+            System.out.println("An employee with ID of "+employeeID+" is not on the list.");
+        }
+        return status;
     }
     public static String getEmployeeID(WebElement element, String attribute){
         return element.getAttribute(attribute);
@@ -45,34 +64,37 @@ public static void main(String[] args) {
 
     click(driver.findElement(By.id("menu_pim_viewPimModule")));//Navigate to PIM
 
-    String employeeID = addNewUser("Jack", "Voltaire", "Bell");//add new user and return ID
+    String employeeID = addNewEmployee("Jack", "Voltaire", "Bell");//add new user and return ID
 
-    click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check new user added or not
+    click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
 
-    boolean status = false;
-    int maxNumberOfNextPage = 0;
+    List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
 
-    while (status == false && maxNumberOfNextPage < 5) {
+    verifyEmployee(employeeID,listOfIDs);
 
-        List<WebElement> selectElements = driver.findElements(By.cssSelector("tbody tr td:nth-child(1)"));//Get all select elements
-        List<WebElement> listOfIDs = driver.findElements(By.cssSelector("tbody tr td:nth-child(2)"));//Get all list of ID's
-        WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
-        WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
-        WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
-        //Check element if it exists in the given list of elements:
-        for (int i = 0; i < listOfIDs.size(); i++) {
-            if (listOfIDs.get(i).getText().equals(employeeID)) {
-                selectElements.get(i).click();
-                click(deleteBtn);
-                click(dialogDeleteBtn);//click ok!
-                status = true;
-                break;
-            }
-        }
-        if (status == false){
-        click(nextBtn);}
-        maxNumberOfNextPage++;
-    }
+//    while (status == false && maxNumberOfNextPage < 5) {
+//
+//        List<WebElement> selectElements = driver.findElements(By.cssSelector("tbody tr td:nth-child(1)"));//Get all select elements
+//        List<WebElement> listOfIDs = driver.findElements(By.cssSelector("tbody tr td:nth-child(2)"));//Get all list of ID's
+//        WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
+//
+//        WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
+//        WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
+//
+//        //Check element if it exists in the given list of elements:
+//        for (int i = 0; i < listOfIDs.size(); i++) {
+//            if (listOfIDs.get(i).getText().equals(employeeID)) {
+//                selectElements.get(i).click();
+//                click(deleteBtn);
+//                click(dialogDeleteBtn);//click ok!
+//                status = true;
+//                break;
+//            }
+//        }
+//        if (status == false){
+//        click(nextBtn);}
+//        maxNumberOfNextPage++;
+//    }
     //Re-check element if it exists in the given list of elements:
 //    for (int i = 0; i < listOfIDs.size(); i++) {
 //        if (listOfIDs.get(i).getText().equals(employeeID)){
@@ -81,7 +103,6 @@ public static void main(String[] args) {
 //        }
 //    }
     //System.out.println(checkForValue(listOfIDs, "102342"));
-
 
     tearDown();
 }
