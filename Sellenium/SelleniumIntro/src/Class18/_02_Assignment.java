@@ -55,22 +55,70 @@ public class _02_Assignment {
     public static String getEmployeeID(WebElement element, String attribute){
         return element.getAttribute(attribute);
     }
+    public static boolean clickEmployee(String employeeID, List<WebElement> listOfIDs, List<WebElement> listOfCBs){
 
-public static void main(String[] args) {
+        boolean status = false;
+        try{
+        for (int i = 0; i < listOfIDs.size(); i++) {
+            if (listOfIDs.get(i).getText().equals(employeeID)) {
+                System.out.println("An employee with ID of "+listOfIDs.get(i).getText()+" is on the list.");
+                listOfCBs.get(i).click();
+                waitInSeconds(5);
+                status = true;
+                break;
+            }
+        }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-    setUp("https://www.exelentersdet.com");
+        if(status == false){
+            System.out.println("An employee with ID of "+employeeID+" is not on the list.");
+        }
+        return status;
+    }
 
-    loginToExelenter("Admin","Exelent2022Sdet!");
+    public static void main(String[] args) {
 
-    click(driver.findElement(By.id("menu_pim_viewPimModule")));//Navigate to PIM
+        setUp("https://www.exelentersdet.com");
 
-    String employeeID = addNewEmployee("Jack", "Voltaire", "Bell");//add new user and return ID
+        loginToExelenter("Admin","Exelent2022Sdet!");
 
-    click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+        click(driver.findElement(By.id("menu_pim_viewPimModule")));//Navigate to PIM
 
-    List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
+        String employeeID = addNewEmployee("Jack", "Voltaire", "Bell");//add new user and return ID
 
-    verifyEmployee(employeeID,listOfIDs);
+        click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+
+        int pageNumber = 0;
+        boolean employeeFound = false;
+        String expectedID = employeeID;
+
+        while (pageNumber < 5 && employeeFound == false) {
+            List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
+            List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
+            WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
+
+            verifyEmployee(employeeID, listOfIDs);
+
+            if (clickEmployee(expectedID, listOfIDs, listOfCBs)) {
+                waitInSeconds(4);
+                WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
+                click(deleteBtn);
+                WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
+                click(dialogDeleteBtn);
+                System.out.println("Employee with ID of " + expectedID + " is successfully removed from the list.");
+                employeeFound = true;
+                break;
+            } else {
+                if (pageNumber < 4) {
+                    System.out.println("Employee not found on lisy#" + pageNumber + ", switching to the next page.");
+                    click(nextBtn);
+                } else {
+                    System.out.println("An employee with ID of " + expectedID + "does not on exist.");
+                }
+            }
+        }
 
 //    while (status == false && maxNumberOfNextPage < 5) {
 //
@@ -109,6 +157,8 @@ public static void main(String[] args) {
     public static WebElement get_ith_Element( List<WebElement> list, int i){
     return list.get(i);
 }
+
+
     public static int checkForValue( List<WebElement> list, String value){
         int n_thElement = Integer.parseInt(null);
         for (int i = 0; i < list.size(); i++) {
