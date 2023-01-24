@@ -73,7 +73,7 @@ public class _02_Assignment {
         }
 
         if(status == false){
-            System.out.println("An employee with ID of "+employeeID+" is not on the list.");
+            //System.out.println("An employee with ID of "+employeeID+" is not on the list.");
         }
         return status;
     }
@@ -92,14 +92,14 @@ public class _02_Assignment {
 
         int pageNumber = 0;
         boolean employeeFound = false;
-        String expectedID = "343";
+        String expectedID = "0071";
 
         while (pageNumber < 6 && employeeFound == false) {
             List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
             List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
             WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
 
-            verifyEmployee(employeeID, listOfIDs);
+            //verifyEmployee(employeeID, listOfIDs);
 
             if (clickEmployee(expectedID, listOfIDs, listOfCBs)) {
                 waitInSeconds(4);
@@ -122,43 +122,9 @@ public class _02_Assignment {
                         pageNumber++;
                     }
                 }catch (Exception e)
-                {   e.printStackTrace();
-                }
+                {   e.printStackTrace();}
             }
         }
-
-//    while (status == false && maxNumberOfNextPage < 5) {
-//
-//        List<WebElement> selectElements = driver.findElements(By.cssSelector("tbody tr td:nth-child(1)"));//Get all select elements
-//        List<WebElement> listOfIDs = driver.findElements(By.cssSelector("tbody tr td:nth-child(2)"));//Get all list of ID's
-//        WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
-//
-//        WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
-//        WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
-//
-//        //Check element if it exists in the given list of elements:
-//        for (int i = 0; i < listOfIDs.size(); i++) {
-//            if (listOfIDs.get(i).getText().equals(employeeID)) {
-//                selectElements.get(i).click();
-//                click(deleteBtn);
-//                click(dialogDeleteBtn);//click ok!
-//                status = true;
-//                break;
-//            }
-//        }
-//        if (status == false){
-//        click(nextBtn);}
-//        maxNumberOfNextPage++;
-//    }
-    //Re-check element if it exists in the given list of elements:
-//    for (int i = 0; i < listOfIDs.size(); i++) {
-//        if (listOfIDs.get(i).getText().equals(employeeID)){
-//            System.out.println("Element has not been deleted!");
-//            break;
-//        }
-//    }
-    //System.out.println(checkForValue(listOfIDs, "102342"));
-
     tearDown();
 }
     public static WebElement get_ith_Element( List<WebElement> list, int i){
@@ -176,6 +142,4 @@ public class _02_Assignment {
         }
         return n_thElement;
     }
-    //public static int
-
 }
