@@ -61,7 +61,7 @@ public class _02_Assignment {
         try{
         for (int i = 0; i < listOfIDs.size(); i++) {
             if (listOfIDs.get(i).getText().equals(employeeID)) {
-                System.out.println("An employee with ID of "+listOfIDs.get(i).getText()+" is on the list.");
+                System.out.println("An employee with ID of "+listOfIDs.get(i).getText()+" is on the list, and employee is clicked.");
                 listOfCBs.get(i).click();
                 waitInSeconds(5);
                 status = true;
@@ -92,9 +92,9 @@ public class _02_Assignment {
 
         int pageNumber = 0;
         boolean employeeFound = false;
-        String expectedID = employeeID;
+        String expectedID = "343";
 
-        while (pageNumber < 5 && employeeFound == false) {
+        while (pageNumber < 6 && employeeFound == false) {
             List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
             List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
             WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
@@ -111,11 +111,18 @@ public class _02_Assignment {
                 employeeFound = true;
                 break;
             } else {
-                if (pageNumber < 4) {
-                    System.out.println("Employee not found on lisy#" + pageNumber + ", switching to the next page.");
-                    click(nextBtn);
-                } else {
-                    System.out.println("An employee with ID of " + expectedID + "does not on exist.");
+                try {
+                    if (pageNumber < 5) {
+                        System.out.println("Employee not found on list #" + (pageNumber+1) + ", switching to the next page.");
+                        System.out.println(" ================ ");
+                        click(nextBtn);
+                        pageNumber++;
+                    } else {
+                        System.out.println("An employee with ID of " + expectedID + " does not exist.");
+                        pageNumber++;
+                    }
+                }catch (Exception e)
+                {   e.printStackTrace();
                 }
             }
         }
