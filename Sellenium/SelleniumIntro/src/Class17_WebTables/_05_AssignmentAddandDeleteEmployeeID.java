@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static utils.BaseClass.*;
-public class _05_Assignment {
+public class _05_AssignmentAddandDeleteEmployeeID {
 /**
  * HW: Test Case: Add and then Delete added employee from the table
  * 1. Open Chrome Browser
