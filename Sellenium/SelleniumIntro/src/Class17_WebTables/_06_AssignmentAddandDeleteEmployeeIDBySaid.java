@@ -38,10 +38,10 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
     public static List<WebElement> getList(String element){
         return driver.findElements(By.cssSelector(element));
     }
-    static void verifyEmployee(String employeeID){
+    static void verifyEmployee(String name, String middleName, String surname){
 
-        WebElement personalTxtEmployeeId = driver.findElement(By.id("personal_txtEmployeeId"));
-        if (employeeID.equals(personalTxtEmployeeId.getText())){
+        WebElement personalTxtEmployeeId = driver.findElement(By.cssSelector("div#profile-pic h1"));
+        if (personalTxtEmployeeId.getText().equals(name+" "+middleName+" "+surname)){
             System.out.println("Employee is added.");
         }else {
             System.out.println("Employee has not been added.");
@@ -84,23 +84,26 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
 
         click(driver.findElement(By.id("menu_pim_viewPimModule")));//Navigate to PIM
 
+        String name = "Jack";
+        String surname = "Bell";
+        String middleName = "Voltaire";
         /* 4. Add an employee and get employee ID*/
-        String employeeID = addNewEmployee("Jack", "Voltaire", "Bell");//add new user and return ID
+        String employeeID = addNewEmployee(name, middleName, surname);//add new user and return ID
 
         /* 5. Verify employee has been added (By retrieving Employee ID).*/
-        click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+        verifyEmployee(name, middleName, surname);
 
-        verifyEmployee(employeeID);
+        //click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+
+
         int pageNumber = 0;
         boolean employeeFound = false;
         String expectedID = "0071";
-//        verifyEmployee(employeeID);
+
 //        while (pageNumber < 6 && employeeFound == false) {
 //            List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
 //            List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
 //            WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
-//
-//            //verifyEmployee(employeeID, listOfIDs);
 //
 //            if (clickEmployee(expectedID, listOfIDs, listOfCBs)) {
 //                waitInSeconds(4);
