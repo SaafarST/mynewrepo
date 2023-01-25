@@ -38,20 +38,15 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
     public static List<WebElement> getList(String element){
         return driver.findElements(By.cssSelector(element));
     }
-    public static boolean verifyEmployee(String employeeID, List<WebElement> listOfIDs){
+    static void verifyEmployee(String employeeID){
 
-        boolean status = false;
-            for (WebElement ID : listOfIDs) {
-                if (ID.getText().equals(employeeID)) {
-                    System.out.println("An employee with ID of "+ID.getText()+" is on the list.");
-                    status = true;
-                    break;
-                }
-            }
-        if(status == false){
-            System.out.println("An employee with ID of "+employeeID+" is not on the list.");
+        WebElement personalTxtEmployeeId = driver.findElement(By.id("personal_txtEmployeeId"));
+        if (employeeID.equals(personalTxtEmployeeId.getText())){
+            System.out.println("Employee is added.");
+        }else {
+            System.out.println("Employee has not been added.");
         }
-        return status;
+
     }
     public static String getEmployeeID(WebElement element, String attribute){
         return element.getAttribute(attribute);
@@ -94,10 +89,12 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
 
         /* 5. Verify employee has been added (By retrieving Employee ID).*/
         click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+
+        verifyEmployee(employeeID);
         int pageNumber = 0;
         boolean employeeFound = false;
         String expectedID = "0071";
-//
+//        verifyEmployee(employeeID);
 //        while (pageNumber < 6 && employeeFound == false) {
 //            List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
 //            List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
