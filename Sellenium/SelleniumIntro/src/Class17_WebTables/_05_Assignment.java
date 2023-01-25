@@ -1,12 +1,11 @@
-package Class18;
-import org.apache.batik.css.engine.value.css2.SrcManager;
+package Class17_WebTables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
 import static utils.BaseClass.*;
-public class _02_Assignment {
+public class _05_Assignment {
 /**
  * HW: Test Case: Add and then Delete added employee from the table
  * 1. Open Chrome Browser
