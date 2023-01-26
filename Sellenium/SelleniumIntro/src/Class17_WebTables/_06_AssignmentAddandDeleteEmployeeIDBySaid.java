@@ -100,7 +100,8 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
         String expectedID = "0071";
         List<WebElement> rows = driver.findElements(By.cssSelector("div#tableWrapper tbody tr"));
         for (int i = 0; i < rows.size(); i++) {
-            if (rows.get(i).getText().contains(employeeID)){
+            String ID = driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child(" + (i+1) + ") td:nth-child(2)")).getText();
+            if (ID.equals(employeeID)){
                 driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child("+i+") td:nth-child(1)")).click();
                 waitInSeconds(1);
                 WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
