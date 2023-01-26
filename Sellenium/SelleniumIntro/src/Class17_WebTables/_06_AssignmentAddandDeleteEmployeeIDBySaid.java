@@ -93,12 +93,22 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
         /* 5. Verify employee has been added (By retrieving Employee ID).*/
         verifyEmployee(name, middleName, surname);
 
-        //click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+        click(driver.findElement(By.id("menu_pim_viewEmployeeList")));//Navigate to employee list to check user added or not
+        waitInSeconds(1);
 
-
-        int pageNumber = 0;
-        boolean employeeFound = false;
+        //Delete added employee (By employee ID - ID is unique, could be multiple employees with same name)
         String expectedID = "0071";
+        List<WebElement> rows = driver.findElements(By.cssSelector("div#tableWrapper tbody tr"));
+        for (int i = 0; i < rows.size(); i++) {
+            if (rows.get(i).getText().equals(employeeID)){
+                driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child("+i+") td:nth-child(1)")).click();
+                waitInSeconds(1);
+                WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
+                click(deleteBtn);
+                WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
+                click(dialogDeleteBtn);
+            }
+        }
 
 //        while (pageNumber < 6 && employeeFound == false) {
 //            List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
