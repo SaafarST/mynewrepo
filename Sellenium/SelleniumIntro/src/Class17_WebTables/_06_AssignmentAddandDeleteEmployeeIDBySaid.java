@@ -107,6 +107,8 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
                 click(deleteBtn);
                 WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
                 click(dialogDeleteBtn);
+                System.out.println("Employee with ID of " + expectedID + " is successfully removed from the list.");
+                break;
             }
         }
 
