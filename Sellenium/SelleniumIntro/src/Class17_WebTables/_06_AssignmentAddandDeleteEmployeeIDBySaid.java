@@ -98,18 +98,21 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
 
         //Delete added employee (By employee ID - ID is unique, could be multiple employees with same name)
         String expectedID = "0071";
-        List<WebElement> rows = driver.findElements(By.cssSelector("div#tableWrapper tbody tr"));
-        for (int i = 0; i < rows.size(); i++) {
-            String ID = driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child(" + (i+1) + ") td:nth-child(2)")).getText();
-            if (ID.equals(employeeID)){
-                driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child("+i+") td:nth-child(1)")).click();
-                waitInSeconds(1);
-                WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
-                click(deleteBtn);
-                WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
-                click(dialogDeleteBtn);
-                System.out.println("Employee with " + name + " " + surname +" and ID of " + expectedID + " is successfully removed from the list.");
-                break;
+        boolean found = true;
+        while (!found) {
+            List<WebElement> rows = driver.findElements(By.cssSelector("div#tableWrapper tbody tr"));
+            for (int i = 0; i < rows.size(); i++) {
+                String ID = driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child(" + (i + 1) + ") td:nth-child(2)")).getText();
+                if (ID.equals(employeeID)) {
+                    driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child(" + i + ") td:nth-child(1)")).click();
+                    waitInSeconds(1);
+                    WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
+                    click(deleteBtn);
+                    WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
+                    click(dialogDeleteBtn);
+                    System.out.println("Employee with " + name + " " + surname + " and ID of " + expectedID + " is successfully removed from the list.");
+                    break;
+                }
             }
         }
 
