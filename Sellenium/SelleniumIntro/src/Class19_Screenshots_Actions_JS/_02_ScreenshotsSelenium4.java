@@ -3,6 +3,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import utils.ConfigsReader;
 
 import java.io.File;
@@ -33,7 +35,15 @@ public class _02_ScreenshotsSelenium4 {
          *
          */
 
+        WebElement quickLaunch = driver.findElement(By.className("quickLaungeContainer"));
+        File sourceFile = quickLaunch.getScreenshotAs(OutputType.FILE);
+        try {
+            FileHandler.copy(sourceFile,new File("screenshots/quickLaunch.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Unable to take screenshots");
+        }
 
-        tearDown();
+        // tearDown();
     }
 }
