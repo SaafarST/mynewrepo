@@ -3,15 +3,20 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ConfigsReader;
+import utils.Constants;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import static utils.BaseClass.*;
 public class _01_ScreenshotsDemo {
     public static void main(String[] args) {
         setUp("https://exelentersdet.com");
+
 
         // Login to the web application
         sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperties("username"));
@@ -27,11 +32,13 @@ public class _01_ScreenshotsDemo {
          *      Method used is:
          *         - getScreenshotAs()
          */
-
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.ExPLICIT_WAIT_TIME));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("flot-overlay")));
+        wa
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(sourceFile,new File("dashboard.png"));
+            FileUtils.copyFile(sourceFile,new File("dashboard1.png"));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Screenshot is not taken");

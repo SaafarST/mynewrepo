@@ -62,6 +62,10 @@ public class CommonMethods {
         waitForElement().until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public static void waitForPresenceOfElement(By by){
+        waitForElement().until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
     public static void clickButWaitForClickability(WebElement element){
         waitForClickability(element);
         element.click();
