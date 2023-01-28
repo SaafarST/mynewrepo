@@ -34,16 +34,18 @@ public class _01_ScreenshotsDemo {
          */
 //        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.ExPLICIT_WAIT_TIME));
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("flot-overlay")));
-        wa
+        waitForPresenceOfElement(By.className("flot-overlay"));
+
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(sourceFile,new File("dashboard1.png"));
+            FileUtils.copyFile(sourceFile,new File("dashboard2.png"));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Screenshot is not taken");
         }
 
+        waitInSeconds(1);
 
         tearDown();
     }
