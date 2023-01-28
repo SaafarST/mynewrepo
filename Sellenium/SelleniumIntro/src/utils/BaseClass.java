@@ -30,8 +30,8 @@ public class BaseClass extends utils.CommonMethods{
 
         driver.get(url);
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        //driver.get(ConfigsReader.getProperties("url"));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT_TIME));
+
     }
     public static void tearDown() {
 
