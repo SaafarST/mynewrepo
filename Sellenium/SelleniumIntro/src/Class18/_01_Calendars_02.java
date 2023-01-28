@@ -10,11 +10,10 @@ import static utils.BaseClass.*;
 
 public class _01_Calendars_02 extends BaseClass {
     public static void main(String[] args) {
-        setUp("https://www.expedia.com");
+        setUp("https://www.expedia.com/flights");
 
-        waitInSeconds(10);
-        driver.findElement(By.className("uitk-heading uitk-heading-3")).click();
-        waitInSeconds(1);
+
+        driver.findElement(By.cssSelector("h1[class='uitk-heading uitk-heading-3']")).click();
         driver.findElement(By.id("d1-btn")).click();
         String expectedDeparture = "May 17 2023";
         String expectedArrival = "July 26 2023";

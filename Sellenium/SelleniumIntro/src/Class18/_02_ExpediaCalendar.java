@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static utils.BaseClass.*;
-public class _01_SimpleCalendar {
+public class _02_ExpediaCalendar {
     public static void main(String[] args) {
         setUp("https://demoqa.com/date-picker");
 
