@@ -100,7 +100,7 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
         String expectedID = "0071";
         boolean found = false;
         int pageNumber = 0;
-        while (!found && pageNumber <7) {
+        while (!found && pageNumber < 7) {
             List<WebElement> rows = driver.findElements(By.cssSelector("div#tableWrapper tbody tr"));
             for (int i = 0; i < rows.size(); i++) {
                 String ID = driver.findElement(By.cssSelector("table#resultTable tbody tr:nth-child(" + (i + 1) + ") td:nth-child(2)")).getText();
@@ -122,50 +122,6 @@ public class _06_AssignmentAddandDeleteEmployeeIDBySaid {
 
         }
 
-//        while (pageNumber < 6 && employeeFound == false) {
-//            List<WebElement> listOfIDs = getList("tbody tr td:nth-child(2)");
-//            List<WebElement> listOfCBs = getList("tbody tr td:nth-child(1)");
-//            WebElement nextBtn = driver.findElement(By.xpath("(//*[contains(text(),'Next')])[1]"));
-//
-//            if (clickEmployee(expectedID, listOfIDs, listOfCBs)) {
-//                waitInSeconds(4);
-//                WebElement deleteBtn = driver.findElement(By.id("btnDelete"));
-//                click(deleteBtn);
-//                WebElement dialogDeleteBtn = driver.findElement(By.id("dialogDeleteBtn"));//Dialogue delete Btn
-//                click(dialogDeleteBtn);
-//                System.out.println("Employee with ID of " + expectedID + " is successfully removed from the list.");
-//                employeeFound = true;
-//                break;
-//            } else {
-//                try {
-//                    if (pageNumber < 5) {
-//                        System.out.println("Employee not found on list #" + (pageNumber+1) + ", switching to the next page.");
-//                        System.out.println(" ================ ");
-//                        click(nextBtn);
-//                        pageNumber++;
-//                    } else {
-//                        System.out.println("An employee with ID of " + expectedID + " does not exist.");
-//                        pageNumber++;
-//                    }
-//                }catch (Exception e)
-//                {   e.printStackTrace();}
-//            }
-//        }
-//    tearDown();
-//}
-//    public static WebElement get_ith_Element( List<WebElement> list, int i){
-//    return list.get(i);
-//}
-//
-//
-//    public static int checkForValue( List<WebElement> list, String value){
-//        int n_thElement = Integer.parseInt(null);
-//        for (int i = 0; i < list.size(); i++) {
-//            if (list.get(i).getText().equals(value)){
-//                n_thElement = i;
-//                break;
-//            }
-//        }
-//        return n_thElement;
+        tearDown();
     }
 }
