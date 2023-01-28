@@ -3,17 +3,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ConfigsReader;
-import utils.Constants;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 import static utils.BaseClass.*;
-public class _01_ScreenshotsDemo {
+public class _01_ScreenshotsSelenium3 {
     public static void main(String[] args) {
         setUp("https://exelentersdet.com");
 
@@ -39,7 +35,7 @@ public class _01_ScreenshotsDemo {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(sourceFile,new File("dashboard2.png"));
+            FileUtils.copyFile(sourceFile,new File("screenshots/dashboard3.png"));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Screenshot is not taken");
