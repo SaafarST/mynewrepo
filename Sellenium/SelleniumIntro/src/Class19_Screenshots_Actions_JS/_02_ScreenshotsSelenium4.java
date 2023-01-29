@@ -44,6 +44,6 @@ public class _02_ScreenshotsSelenium4 {
             System.out.println("Unable to take screenshots");
         }
 
-        // tearDown();
+         tearDown();
     }
 }

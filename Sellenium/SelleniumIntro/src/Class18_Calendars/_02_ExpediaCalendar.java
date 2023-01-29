@@ -1,4 +1,4 @@
-package Class18;
+package Class18_Calendars;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

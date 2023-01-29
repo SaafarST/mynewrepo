@@ -1,12 +1,9 @@
-package Class18;
+package Class18_Calendars;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.BaseClass;
 
-import java.awt.*;
 import java.util.List;
-
-import static utils.BaseClass.*;
 
 public class _01_Calendars_02 extends BaseClass {
     public static void main(String[] args) {
