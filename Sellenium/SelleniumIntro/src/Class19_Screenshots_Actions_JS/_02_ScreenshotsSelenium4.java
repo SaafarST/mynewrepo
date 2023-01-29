@@ -44,6 +44,16 @@ public class _02_ScreenshotsSelenium4 {
             System.out.println("Unable to take screenshots");
         }
 
-         tearDown();
+        // 2. How to take full page screenshot with Selenium 4 using Chrome browser. (There is no native support).
+        WebElement fullPageScreenshot = driver.findElement(By.tagName("html"));
+        File sourceFullPage = fullPageScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileHandler.copy(sourceFullPage,new File("screenshots/dashBoardScreenshotsChrome.jpeg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Unable to take screenshots");
+        }
+
+        tearDown();
     }
 }
