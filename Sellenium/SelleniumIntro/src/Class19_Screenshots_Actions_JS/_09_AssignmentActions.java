@@ -1,4 +1,8 @@
 package Class19_Screenshots_Actions_JS;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import static utils.BaseClass.*;
 public class _09_AssignmentActions {
 
@@ -18,7 +22,14 @@ public class _09_AssignmentActions {
     public static void main(String[] args) {
 
         setUp("https://www.exelenter.com");
+        Actions actions = new Actions(driver);
 
+        WebElement courseMenu = driver.findElement(By.xpath("(//span[text()='Courses'])[1]"));
+        actions.moveToElement(courseMenu).perform();
+        waitInSeconds(1);
+
+
+        //tearDown();
 
 
     }
