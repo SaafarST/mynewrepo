@@ -27,9 +27,11 @@ public class _09_AssignmentActions {
         WebElement courseMenu = driver.findElement(By.xpath("(//span[text()='Courses'])[1]"));
         actions.moveToElement(courseMenu).perform();
         waitInSeconds(1);
+        actions.scrollToElement(driver.findElement(By.xpath("(//span[@class='ct-menu-item'])[7]"))).click().perform();
+        waitInSeconds(1);
 
 
-        //tearDown();
+        tearDown();
 
 
     }
