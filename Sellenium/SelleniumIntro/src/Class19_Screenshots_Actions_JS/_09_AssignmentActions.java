@@ -4,6 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
+
 import static utils.BaseClass.*;
 public class _09_AssignmentActions {
 
@@ -30,7 +32,7 @@ public class _09_AssignmentActions {
         WebElement courseMenu = driver.findElement(By.xpath("(//span[text()='Courses'])[1]"));
         actions.moveToElement(courseMenu).perform();
 
-        //actions.scrollToElement(driver.findElement(By.xpath("(//span[@class='ct-menu-item'])[7]"))).perform();
+        //From the sub-menu select 'Java-sdet' and click on it
 
         driver.findElement(By.xpath("//li[@id='menu-item-9053']/a")).click();
         waitInSeconds(1);
@@ -39,14 +41,27 @@ public class _09_AssignmentActions {
        System.out.println(textFromSDET);
        waitInSeconds(1);
 
+
+        //Open a new tab and navigate to Google homepage on this newly opened tab
         driver.navigate().to("https://google.com");
         waitInSeconds(1);
 
-        driver.findElement(By.name("q")).sendKeys(textFromSDET+ Keys.ENTER);
+        //On the Google search box, type "Exelenter" +  Title (concatenate), which you copied from the exelenter sdet page  (Step 4),
+        //Press Enter, and you will be taken to the Google Search result page
+        driver.findElement(By.name("q")).sendKeys(("Exelenter "+textFromSDET)+ Keys.ENTER);
         waitInSeconds(1);
 
+        //From the Search Results, loop through until you find a link with the title 'Exelenter' click on it
 
+        List<WebElement> results = driver.findElements(By.xpath("//div/a/h3"));
+        for (WebElement result : results) {
+            if (result.getText().contains("Exelenter")){
+                result.click();
+                break;
+            }
+        }
 
-        //tearDown();
+        waitInSeconds(1);
+        tearDown();
     }
 }
