@@ -30,6 +30,11 @@ public class _09_AssignmentActions {
         actions.scrollToElement(driver.findElement(By.xpath("(//span[@class='ct-menu-item'])[7]"))).click().perform();
         waitInSeconds(1);
 
+        String textFromSDET = driver.findElement(By.xpath("(//div[@class='elementor-widget-container']/div)[5]/h3")).getText();
+        driver.navigate().to("https://google.com");
+        driver.findElement(By.linkText("q")).sendKeys(textFromSDET);
+
+
 
         tearDown();
 
