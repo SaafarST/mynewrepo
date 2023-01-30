@@ -1,5 +1,6 @@
 package Class19_Screenshots_Actions_JS;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -21,23 +22,31 @@ public class _09_AssignmentActions {
  */
     public static void main(String[] args) {
 
+        //Navigate to exelenter
         setUp("https://www.exelenter.com");
         Actions actions = new Actions(driver);
 
+        //Hover over the 'Courses+' menu, and a sub-menu dropdown will open
         WebElement courseMenu = driver.findElement(By.xpath("(//span[text()='Courses'])[1]"));
         actions.moveToElement(courseMenu).perform();
-        waitInSeconds(1);
-        actions.scrollToElement(driver.findElement(By.xpath("(//span[@class='ct-menu-item'])[7]"))).click().perform();
+
+        //actions.scrollToElement(driver.findElement(By.xpath("(//span[@class='ct-menu-item'])[7]"))).perform();
+
+        driver.findElement(By.xpath("//li[@id='menu-item-9053']/a")).click();
         waitInSeconds(1);
 
-        String textFromSDET = driver.findElement(By.xpath("(//div[@class='elementor-widget-container']/div)[5]/h3")).getText();
+       String textFromSDET = driver.findElement(By.xpath("//div[@class='ct-title1 style4']/h3")).getText();
+       System.out.println(textFromSDET);
+       waitInSeconds(1);
+
         driver.navigate().to("https://google.com");
-        driver.findElement(By.linkText("q")).sendKeys(textFromSDET);
+        waitInSeconds(1);
+
+        driver.findElement(By.name("q")).sendKeys(textFromSDET+ Keys.ENTER);
+        waitInSeconds(1);
 
 
 
-        tearDown();
-
-
+        //tearDown();
     }
 }
