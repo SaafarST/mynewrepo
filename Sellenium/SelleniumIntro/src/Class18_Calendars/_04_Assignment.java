@@ -23,27 +23,38 @@ public class _04_Assignment {
      *  *     10. Close the browser.
      *  */
     public static void main(String[] args) {
-        //Get to website:
+        //Navigate to URL: https://www.aa.com/:
         setUp("https://www.aa.com/");
+
+        //Depart and return dates:
         String departDate = "March 01, 2023";
         String returnDate = "April 15, 2023";
 
+        //Before selcting depart destination, clear existing:
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).clear();
+
+        //3. Select From → (LAX)
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).sendKeys("LAX");
+
+        //Click to approve LAX
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).click();
 
+        //4. Select To → (JFK) right after it is clickable
         waitForClickability(driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")));
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")).sendKeys("JFK");
 
+        //5. Number of passengers →
         selectDdValue(driver.findElement(By.id("flightSearchForm.adultOrSeniorPassengerCount")),1);
 
         waitInSeconds(1);
 
+        //Select Depart → March 01, 2023
         click(driver.findElement(By.xpath("(//button[@class='ui-datepicker-trigger'])[1]")));
 
         String datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
         String datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
 
+        //check for month and year:
         while (!departDate.contains(datePickerMonth)){
             waitForClickability(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
             click(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
