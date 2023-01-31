@@ -27,11 +27,14 @@ public class _04_Assignment {
         setUp("https://www.aa.com/");
         String departDate = "March 01, 2023";
         String returnDate = "April 15, 2023";
+
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).clear();
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).sendKeys("LAX");
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).click();
+
         waitForClickability(driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")));
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")).sendKeys("JFK");
+
         selectDdValue(driver.findElement(By.id("flightSearchForm.adultOrSeniorPassengerCount")),1);
 
         waitInSeconds(1);
