@@ -33,7 +33,6 @@ public class _09_AssignmentActions {
         actions.moveToElement(courseMenu).perform();
 
         //From the sub-menu select 'Java-sdet' and click on it
-
         driver.findElement(By.xpath("//li[@id='menu-item-9053']/a")).click();
         waitInSeconds(1);
 
@@ -52,7 +51,6 @@ public class _09_AssignmentActions {
         waitInSeconds(1);
 
         //From the Search Results, loop through until you find a link with the title 'Exelenter' click on it
-
         List<WebElement> results = driver.findElements(By.xpath("//div/a/h3"));
         for (WebElement result : results) {
             if (result.getText().contains("Exelenter")){
