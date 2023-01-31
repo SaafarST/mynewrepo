@@ -36,10 +36,9 @@ public class _09_AssignmentActions {
         driver.findElement(By.xpath("//li[@id='menu-item-9053']/a")).click();
         waitInSeconds(1);
 
-       String textFromSDET = driver.findElement(By.xpath("//div[@class='ct-title1 style4']/h3")).getText();
-       System.out.println(textFromSDET);
-       waitInSeconds(1);
-
+        String textFromSDET = driver.findElement(By.xpath("//div[@class='ct-title1 style4']/h3")).getText();
+        System.out.println(textFromSDET);
+        waitInSeconds(1);
 
         //Open a new tab and navigate to Google homepage on this newly opened tab
         driver.navigate().to("https://google.com");
