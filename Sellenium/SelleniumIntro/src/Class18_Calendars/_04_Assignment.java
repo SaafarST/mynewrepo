@@ -65,6 +65,7 @@ public class _04_Assignment {
         System.out.println(datePickerYear + " " + departDate.contains(datePickerYear));
         System.out.println(datePickerMonth + " " + departDate.contains(datePickerMonth));
 
+        //Select day of depart:
         List<WebElement> datePickerDays = driver.findElements(By.cssSelector("tbody tr td a"));
         for (WebElement day : datePickerDays) {
             if (day.getText().equals("1"))
@@ -76,10 +77,12 @@ public class _04_Assignment {
 
         waitInSeconds(1);
 
+        //Select Return → April 15, 2023
         click(driver.findElement(By.xpath("(//button[@class='ui-datepicker-trigger'])[2]")));
         datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
         datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
 
+        //check for month and year:
         while (!returnDate.contains(datePickerMonth)){
             click(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
             datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
@@ -89,6 +92,7 @@ public class _04_Assignment {
         System.out.println(datePickerYear + " " + departDate.contains(datePickerYear));
         System.out.println(datePickerMonth + " " + departDate.contains(datePickerMonth));
 
+        //Select day of return:
         datePickerDays = driver.findElements(By.cssSelector("tbody tr td"));
         for (WebElement day : datePickerDays) {
             if (day.getText().equals("15"))
@@ -98,6 +102,7 @@ public class _04_Assignment {
             }
         }
 
+        //Click to search button>
         click(driver.findElement(By.xpath("(//input[@class='btn btn-fullWidth'])[2]")));
 
         waitInSeconds(1);
