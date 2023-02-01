@@ -15,10 +15,13 @@ public class _10_JSExecuterDemo2 {
 
         String script = "arguments[0].scrollIntoView(true);";
 
-        WebElement table = driver.findElement(By.id("large-table"));
-        ((JavascriptExecutor)driver).executeScript(script,table);
+        // 1st way: using web element: This will take us directly to the table, scrolling based on the element location.
+        //WebElement table = driver.findElement(By.id("large-table"));
+        //((JavascriptExecutor)driver).executeScript(script,table);
 
-        waitInSeconds(1);
+        // 2nd way: using exact coordinates: Scrolling based on exact coordinates where I want to move on the page
+        ((JavascriptExecutor)driver).executeScript("window.scrollBy(500,2650)")
+
 
         waitInSeconds(1);
         tearDown();
