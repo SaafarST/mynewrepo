@@ -18,7 +18,9 @@ public class _11_JSExecuterDemo3 {
         sendText(username, ConfigsReader.getProperties("username"));
         sendText(password, ConfigsReader.getProperties("password"));
 
-
+        waitInSeconds(2);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].style.backgroundColor='yellow'", password);
 
         tearDown();
     }
