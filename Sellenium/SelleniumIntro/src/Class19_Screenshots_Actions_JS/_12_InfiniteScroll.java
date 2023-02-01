@@ -27,9 +27,10 @@ public class _12_InfiniteScroll {
             paragraphs = driver.findElements(By.cssSelector("div[class='jscroll-added']"));
         }
 
+        waitInSeconds(2);
+        javascriptExecutor.executeScript("window.scrollBy(0,-document.body.scrollHeight || -document.documentElement.scrollHeight)", "");
 
-        System.out.println("Number of paragraphs: "+paragraphs.size());
 
-        //tearDown();
+        tearDown();
     }
 }
