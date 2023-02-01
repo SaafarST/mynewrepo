@@ -20,10 +20,9 @@ public class _10_JSExecuterDemo2 {
         //((JavascriptExecutor)driver).executeScript(script,table);
 
         // 2nd way: using exact coordinates: Scrolling based on exact coordinates where I want to move on the page
-        ((JavascriptExecutor)driver).executeScript("window.scrollBy(500,2650)")
+        ((JavascriptExecutor)driver).executeScript("window.scrollBy(500,2650)");
 
 
-        waitInSeconds(1);
         tearDown();
     }
 }
