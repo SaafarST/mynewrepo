@@ -1,5 +1,10 @@
 package Class20_POM.pages;
 
-public class _01_LoginPageWithoutPageFactory {
+import utils.BaseClass;
+
+public class _01_LoginPageWithoutPageFactory extends BaseClass {
+    public static void main(String[] args) {
+
+    }
 
 }
