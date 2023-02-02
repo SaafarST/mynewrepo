@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import static utils.BaseClass.driver;
-
+// Note: This is just a template for LoginPage where we store everything related to Login page here, in this class.
+//  In Page Object Model (Design Pattern), we organize our code by pages. Each web page will have their own class.
 public class _01_LoginPageWithoutPageFactory {
 
     public WebElement username = driver.findElement(By.id("txtUsername"));
