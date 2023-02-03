@@ -1,10 +1,13 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -197,6 +200,42 @@ public class CommonMethods {
 
     public static JavascriptExecutor jsExecutor() {
         return (JavascriptExecutor) driver;
+    }
+    /**
+     * Method performs simple click based on Javascript. Use this if regular Selenium click fails.
+     *
+     * @param element WebElement that needs to be clicked on.
+     */
+    public static void jsClick(WebElement element) {
+        jsExecutor().executeScript("arguments[0].click();", element);
+    }
+    /**
+     * Method will scroll to the given element
+     *
+     * @param element WebElement to get scrolled to
+     */
+    public static void scrollToElement(WebElement element) {
+        jsExecutor().executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * Method will scroll both vertically (left & right) and horizontally (up & down) based on given pixels.
+     * @param horizontalPixel int
+     * @param verticalPixel int
+     */
+    public static void scrollToElement(int horizontalPixel, int verticalPixel) {
+        jsExecutor().executeScript("window.scrollBy(" + horizontalPixel + "," + verticalPixel + ")");
+    }
+
+    public static void takeScreenshot(String fileName) {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(sourceFile, new File("screenshots/" + fileName + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Screenshot is not taken");
+        }
     }
 
 }
