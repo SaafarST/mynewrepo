@@ -55,7 +55,7 @@ public class _04_Assignment {
         String datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
 
         //check for month and year:
-        while (!departDate.contains(datePickerMonth)){
+        while (!(departDate.contains(datePickerMonth) || departDate.contains(datePickerYear))){
             waitForClickability(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
             click(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
             datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
@@ -89,8 +89,8 @@ public class _04_Assignment {
             //datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
         }
 
-        System.out.println(datePickerYear + " " + departDate.contains(datePickerYear));
-        System.out.println(datePickerMonth + " " + departDate.contains(datePickerMonth));
+        System.out.println(datePickerYear + " " + returnDate.contains(datePickerYear));
+        System.out.println(datePickerMonth + " " + returnDate.contains(datePickerMonth));
 
         //Select day of return:
         datePickerDays = driver.findElements(By.cssSelector("tbody tr td"));
@@ -106,6 +106,7 @@ public class _04_Assignment {
         click(driver.findElement(By.xpath("(//input[@class='btn btn-fullWidth'])[2]")));
 
         waitInSeconds(1);
-        tearDown();
+
+        //tearDown();
     }
 }
