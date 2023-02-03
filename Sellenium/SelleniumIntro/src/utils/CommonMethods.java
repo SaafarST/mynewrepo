@@ -1,9 +1,6 @@
 package utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -197,4 +194,9 @@ public class CommonMethods {
     public static String getAttribute(WebElement element, String attribute){
         return element.getAttribute(attribute);
     }
+
+    public static JavascriptExecutor jsExecutor() {
+        return (JavascriptExecutor) driver;
+    }
+
 }
