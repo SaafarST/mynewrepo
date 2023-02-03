@@ -35,12 +35,12 @@ public class _04_Assignment {
 
         //3. Select From → (LAX)
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).sendKeys("LAX");
-
-        //Click to approve LAX
-        driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).click();
+        driver.findElement(By.xpath("form[id='reservationFlightSearchForm']")).click();
+        //driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[1]")).click();
 
         //4. Select To → (JFK) right after it is clickable
-        waitForClickability(driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")));
+        //driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]"));
+        //waitForClickability(driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")));
         driver.findElement(By.xpath("(//input[@class='aaAutoComplete ui-autocomplete-input'])[2]")).sendKeys("JFK");
 
         //5. Number of passengers →
@@ -99,10 +99,10 @@ public class _04_Assignment {
         String datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
         String datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
         //check for month and year:
-        while (!(anyDate.contains(datePickerMonth) || anyDate.contains(datePickerYear))){
+        while (!anyDate.contains(datePickerMonth) && !anyDate.contains(datePickerYear)){
             waitForClickability(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
-            datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
-            datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
+//            datePickerMonth = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
+//            datePickerYear = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
             click(driver.findElement(By.xpath("(//a[@class='ui-datepicker-next ui-corner-all'])[1]")));
         }
     }
