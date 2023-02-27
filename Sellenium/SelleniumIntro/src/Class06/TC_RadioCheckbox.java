@@ -19,7 +19,7 @@ import java.util.List;
         driver.findElement(By.cssSelector(cssOrange)).click();
         driver.findElement(By.cssSelector(cssYellow)).click();
 
-        List<WebElement> elements = driver.findElements(By.name("color"));
+        List<WebElement> elements = driver.findElements(By.name("color"));//list of elements
 
         for(WebElement element:elements){
             if (element.isSelected()){
